@@ -1,0 +1,34 @@
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s;
+    position: relative;
+    &.inline {
+        display: inline-block;
+    }
+    &.active {
+        opacity: 1;
+    }
+    >.screen-detector-fade-in {
+        position: absolute;
+        bottom: -20vh;
+        height: 100%;
+    }
+    &.no-delay {
+        >.screen-detector-fade-in {
+            top: 20vh;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .fade-in-text {
+        >.screen-detector-fade-in {
+            bottom: 0;
+        }
+        &.no-delay {
+            >.screen-detector-fade-in {
+                bottom: 20px;
+            }
+        }
+    }
+}

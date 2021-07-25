@@ -1,0 +1,25 @@
+.footer-social {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background-position: center;
+    background-size: 100%;
+    position: relative;
+    >a {
+        height: 40px;
+        width: 40px;
+        display: block;
+    }
+    >.footer-social-background-hover {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 0.4s;
+        pointer-events: none;
+    }
+    >.footer-social-background-hover {
+    }
+    &:hover {
+    }
+}

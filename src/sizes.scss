@@ -1,0 +1,21 @@
+:root{
+
+    // FONT-SIZES
+    --size-font-size-header: 80px;
+    --size-font-size-small: 12px;
+
+    // MARGINS
+    --size-main-margin: 70px;
+    --size-margin-20: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        // FONT SIZES
+        --size-font-size-header: 40px;
+        --size-font-size-small: 8px;
+
+        // MARGINS
+        --size-main-margin: 30px;
+    }
+}

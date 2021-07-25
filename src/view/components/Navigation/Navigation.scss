@@ -1,0 +1,11 @@
+.navigation {
+    display: flex;
+    flex-direction: row;
+    margin: 0 calc(var(--size-gutter) * (-1));
+    >a {
+        transition: color 0.4s;
+        &:hover {
+            color: var(--color-yellow);
+        }
+    }
+}

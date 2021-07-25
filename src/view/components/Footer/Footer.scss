@@ -1,0 +1,24 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    >.footer-copyright {
+        flex: 1;
+        line-height: 40px;
+        text-align: right;
+        >.year {
+            vertical-align: top;
+            margin-left: 5px;
+        }
+    }
+    >.footer-signature {
+        flex: 2;
+        line-height: 40px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .footer {
+        display: block;
+        text-align: center;
+    }
+}
