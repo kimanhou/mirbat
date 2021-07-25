@@ -1,0 +1,38 @@
+.nav-icon {
+    width: 70px;
+    cursor: pointer;
+    >span {
+        // background: var(--color-white);
+        background: var(--color-black);
+        border-radius: 10px;
+        height: 7px;
+        margin: 7px 0;
+        transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+        &.span-one {
+            width: 50%;
+        }
+        &.span-two {
+            width: 100%;
+        }
+        &.span-three {
+            width: 75%;
+        }
+    }
+    &.checked {
+        >span{
+            &.span-one {
+                transform-origin: bottom;
+                transform: rotatez(45deg) translate(8px,0px);
+            }
+            &.span-two {
+                transform-origin: top;
+                transform: rotatez(-45deg)
+            }
+            &.span-three {
+                transform-origin: bottom;
+                width: 50%;
+                transform: translate(30px,-11px) rotatez(45deg);
+            }
+        }
+    }
+}
