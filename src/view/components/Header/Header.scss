@@ -1,4 +1,18 @@
 .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.4s .4s cubic-bezier(1,.07,1,.9);
+    color: var(--color-black);
+    &.white {
+        color: var(--color-white);
+        transition-delay: .4s;
+    }
+    &.transparent{
+        opacity: 0;
+        transition-delay: 0s;
+    }
     >.header-name {
         line-height: 70px;
         font-size: 70px;

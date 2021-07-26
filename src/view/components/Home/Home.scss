@@ -1,1 +1,45 @@
-.home {}
+.home {
+    position: relative;
+    margin: var(--size-margin-20);
+    >.header {
+        position: absolute;
+        top: var(--size-margin-40);
+        left: var(--size-margin-40);
+    }
+    >.home-content {
+        transform: translateX(0px);
+        pointer-events: none;
+        >.home-content-moving {
+            position: relative;
+            overflow: hidden;
+            transition: left .4s .4s cubic-bezier(1,.07,1,.9);
+            left: 0px;
+            >.header {
+                position: fixed;
+                top: var(--size-margin-40);
+                left: var(--size-margin-40);
+            }
+            >.home-hero {
+                border-radius: 10px;
+                height: 150vh;
+                width: 100%;
+                background: url('../../../images/hero.jpg') no-repeat center top; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+            >.home-tag-line {
+                position: absolute;
+                top: calc(var(--size-margin-40) + 70px + var(--size-main-margin));
+                left: var(--size-margin-40);
+                font-size: 2rem;
+                color: var(--color-white);
+            }
+            &.nav-visible {
+                left: 400px;
+                transition-delay: 0s;
+            }
+        }
+    }
+}

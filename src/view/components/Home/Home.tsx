@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Navigation from '../Navigation/Navigation';
 import './Home.scss';
 
 const Home : React.FC = props => {
+    const [ isNavVisible, setIsNavVisible ] = useState(false);
+    const isNavVisibleClassName = isNavVisible ? 'nav-visible' : '';
+
     return (
-        <div className={`home content-wrapper`}>
-            <Header />
-            <Navigation />
-            <Footer />
+        <div className={`home`}>
+            <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} />
+            <Navigation isVisible={isNavVisible} setIsVisible={setIsNavVisible} />
+            <div className={`home-content`}>
+                <div className={`home-content-moving ${isNavVisibleClassName}`}>
+                    <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} iswhite/>
+                    <div className={`home-hero`}></div>
+                    <div className={`home-tag-line`}>
+                        Lorem ipsum dolor sit amet, <br></br>consectetur adipiscing elit. 
+                    </div>
+                    <Footer />
+                </div>
+            </div>
         </div>
     );
 }
