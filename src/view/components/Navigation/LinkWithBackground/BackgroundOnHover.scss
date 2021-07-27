@@ -1,0 +1,11 @@
+.background-on-hover {
+    position: absolute;
+    bottom: 0;
+    right: calc(var(--size-margin-10) * (-1));
+    transform: skewX(-30deg);
+    background-color: var(--color-grey);
+    opacity: 0.4;
+    width: calc(100% + var(--size-margin-20));
+    height: 50%;
+    transition: width 0.4s;
+}

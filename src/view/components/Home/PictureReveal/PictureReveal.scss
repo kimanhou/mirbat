@@ -1,0 +1,29 @@
+.picture-reveal {
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    >.picture-reveal-cover {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        background-color: var(--color-white);
+        transition: height 1s;
+        transition-timing-function: cubic-bezier(1,.07,1,.9);
+    }
+    &.active {
+        >.picture-reveal-cover {
+            height: 0;
+        }
+    }
+    &.contain {
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        -o-background-size: contain;
+        background-size: contain;
+    }
+}

@@ -1,0 +1,59 @@
+.notre-entreprise {
+    margin: var(--size-main-margin) 0;
+    >.half {
+        flex: 1;
+        &.left {
+            height: auto;
+            margin-right: var(--size-margin-20);
+            .picture {
+                &.one {
+                    align-items: center;
+                    >.picture-one-container {
+                        width: 100%;
+                        height: 75%;
+                        margin-right: var(--size-margin-20);
+                        margin-top: calc(var(--size-margin-20) * (-1));
+                        background-position-x: center;
+                        background-position-y: center;
+                    }
+                }
+                &.two {
+                    >.picture-two-container {
+                        height: 100%;
+                        margin-bottom: var(--size-margin-20);
+                        background: url('../../../../images/home/entreprise-2.jpg') no-repeat left center; 
+                        -webkit-background-size: contain;
+                        -moz-background-size: contain;
+                        -o-background-size: contain;
+                        background-size: contain;
+                    }
+                }
+                &.three {
+                    >.picture-three-container {
+                        width: 100%;
+                        height: 100%;
+                        background: url('../../../../images/home/entreprise-3.jpg') no-repeat left top; 
+                        -webkit-background-size: contain;
+                        -moz-background-size: contain;
+                        -o-background-size: contain;
+                        background-size: contain;
+                    }
+                }
+            }
+            &.active {
+
+            }
+        }
+        &.right {
+            margin: var(--size-main-margin) var(--size-margin-20) var(--size-main-margin) 0;
+            >.notre-entreprise-text {
+                margin-bottom: var(--size-margin-20);
+                line-height: 1.6rem;
+            }
+            >.en-savoir-plus-container {
+                justify-content: flex-end;
+                padding-right: calc(var(--size-margin-10) + 3.33px);
+            }
+        }
+    }
+}

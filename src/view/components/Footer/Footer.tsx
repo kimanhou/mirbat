@@ -1,4 +1,5 @@
 import React from 'react';
+import FadeIn from '../FadeIn/FadeIn';
 import './Footer.scss';
 
 interface IFooterProps {
@@ -7,7 +8,7 @@ interface IFooterProps {
 const Footer : React.FC<IFooterProps> = props => {
 
     return(
-        <div className={`footer`}>
+        <FadeIn className={`footer`} noDelay>
             <div className={`footer-copyright`}>
             </div>
             <div className={`footer-signature`}>
@@ -16,7 +17,7 @@ const Footer : React.FC<IFooterProps> = props => {
             <div className={`footer-copyright`}>
                 <span className={`year`}>&copy; 2021</span>
             </div>
-        </div>
+        </FadeIn>
     )
 }
 

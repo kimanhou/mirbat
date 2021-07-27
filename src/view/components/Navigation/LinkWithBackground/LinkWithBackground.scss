@@ -1,0 +1,8 @@
+.link-with-background {
+    position: relative;
+    &:hover {
+        >.link-with-background-background {
+            width: 0;
+        }
+    }
+}

@@ -10,13 +10,11 @@
     }
     >.screen-detector-fade-in {
         position: absolute;
-        bottom: -20vh;
-        height: 100%;
-    }
-    &.no-delay {
-        >.screen-detector-fade-in {
-            top: 20vh;
-        }
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        pointer-events: none;
     }
 }
 
