@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import Navigation from '../Navigation/Navigation';
 import './Home.scss';
 import OurCompany from './OurCompany/OurCompany';
+import OurProjects from './OurProjects/OurProjects';
 
 const Home : React.FC = props => {
     const [ isNavVisible, setIsNavVisible ] = useState(false);
@@ -21,6 +22,7 @@ const Home : React.FC = props => {
                         Lorem ipsum dolor sit amet, <br></br>consectetur adipiscing elit. 
                     </div>
                     <OurCompany />
+                    <OurProjects />
                     <Footer />
                 </div>
             </div>

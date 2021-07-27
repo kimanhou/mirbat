@@ -1,0 +1,19 @@
+.home-nos-projets {
+    >.left {
+        margin: var(--size-main-margin) var(--size-margin-20) var(--size-main-margin) 0;
+        >.nos-projets-text {
+            margin-bottom: var(--size-margin-20);
+            line-height: 1.6rem;
+        }
+        >.voir-projets-container {
+            justify-content: flex-end;
+            padding-right: calc(var(--size-margin-10) + 3.33px);
+        }
+    }
+    >.right {
+        margin-top: calc(var(--size-main-margin) + 2rem + 10px);
+        >:nth-child(2) {
+            margin: 0 var(--size-margin-20);
+        }
+    }
+}

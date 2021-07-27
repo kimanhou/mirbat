@@ -1,4 +1,4 @@
-.notre-entreprise {
+.home-notre-entreprise {
     margin: var(--size-main-margin) 0;
     >.half {
         flex: 1;
@@ -39,9 +39,6 @@
                         background-size: contain;
                     }
                 }
-            }
-            &.active {
-
             }
         }
         &.right {

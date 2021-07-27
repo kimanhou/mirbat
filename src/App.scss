@@ -9,10 +9,6 @@
         color: var(--color-black);
     }
 
-    .content-wrapper {
-        margin: var(--size-main-margin) var(--size-main-margin) var(--size-margin-20);
-    }
-
     .flex-row {
         display: flex;
         flex-direction: row;
@@ -29,5 +25,10 @@
 
     .uppercase {
         text-transform: uppercase;
+    }
+
+    .highlighted-char {
+        font-size: 2rem;
+        font-weight: 900;
     }
 }

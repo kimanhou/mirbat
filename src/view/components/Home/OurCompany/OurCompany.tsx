@@ -12,9 +12,9 @@ import entreprise3 from '../../../../images/home/entreprise-3.jpg';
 
 const OurCompany : React.FC = props => {
     const [active, setActive] = useState(false);
-    
+
     return (
-        <FadeIn className={`notre-entreprise flex-row`}>
+        <FadeIn className={`home-notre-entreprise flex-row`}>
             <ScreenDetector onActive={() => setActive(true)} onUnactive={() => setActive(false)} />
             <div className={`half left flex-row`}>
                 <div className={`picture one flex-1 flex-row`}>
@@ -32,7 +32,7 @@ const OurCompany : React.FC = props => {
             <div className={`half right`}>
                 <NavigationLink text={new Text('Notre entreprise', 'Notre entreprise')} to='/entreprise' isVisible={true} setIsVisible={() => {}} transitionDelay='0s' />
                 <div className={`notre-entreprise-text`}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    <span className={`highlighted-char`}>L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Suspendisse egestas non dui quis tincidunt. 
                     Suspendisse faucibus dolor nec mi dictum, porttitor maximus tellus fermentum. 
                     Ut interdum tortor aliquet diam lacinia scelerisque. 
