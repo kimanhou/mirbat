@@ -1,18 +1,36 @@
 .footer {
-    display: flex;
-    flex-direction: row;
-    >.footer-copyright {
-        flex: 1;
-        line-height: 40px;
-        text-align: right;
-        >.year {
-            vertical-align: top;
-            margin-left: 5px;
+    border-top: solid 1px var(--color-black);
+    >.thick-underline {
+        width: 0;
+        height: 8px;
+        margin-left: 40px;
+        background-color: var(--color-black);
+        transition: transform .2s cubic-bezier(1,.07,1,.9), width 1s cubic-bezier(1,.07,1,.9);
+    }
+    >.name-container {
+        height: 70px;
+        margin-top: var(--size-margin-20);
+    }
+    >.footer-content {
+        margin-top: var(--size-margin-40);
+        >.footer-copyright {
+            flex: 1;
+            line-height: 40px;
+            text-align: right;
+            >.year {
+                vertical-align: top;
+                margin-left: 5px;
+            }
+        }
+        >.footer-signature {
+            flex: 2;
+            line-height: 40px;
         }
     }
-    >.footer-signature {
-        flex: 2;
-        line-height: 40px;
+    &.active {
+        >.thick-underline {
+            width: 70px;
+        }
     }
 }
 

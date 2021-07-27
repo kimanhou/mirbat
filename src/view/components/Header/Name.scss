@@ -1,10 +1,10 @@
-.header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 1;
-    transition: opacity 0.4s .4s cubic-bezier(1,.07,1,.9);
+.name {
     color: var(--color-black);
+    line-height: 70px;
+    font-size: 70px;
+    margin-left: 40px;
+    transition: opacity 0.4s .4s cubic-bezier(1,.07,1,.9);
+    opacity: 1;
     &.white {
         color: var(--color-white);
         transition-delay: .4s;
