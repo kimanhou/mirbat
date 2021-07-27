@@ -11,11 +11,8 @@ import project2 from '../../../../images/projects/project-2.jpg';
 import project3 from '../../../../images/projects/project-3.jpg';
 
 const OurProjects : React.FC = props => {
-    const [active, setActive] = useState(false);
-    
     return (
         <FadeIn className={`home-nos-projets flex-row`}>
-            <ScreenDetector onActive={() => setActive(true)} onUnactive={() => setActive(false)} />
             <div className={`left`}>
                 <NavigationLink text={new Text('Nos projets', 'Nos projets')} to='/projets' isVisible={true} setIsVisible={() => {}} transitionDelay='0s' />
                     <div className={`nos-projets-text`}>

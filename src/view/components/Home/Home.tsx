@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Navigation from '../Navigation/Navigation';
+import Contact from './Contact/Contact';
 import './Home.scss';
 import OurCompany from './OurCompany/OurCompany';
 import OurProjects from './OurProjects/OurProjects';
@@ -23,6 +24,7 @@ const Home : React.FC = props => {
                     </div>
                     <OurCompany />
                     <OurProjects />
+                    <Contact />
                     <Footer />
                 </div>
             </div>

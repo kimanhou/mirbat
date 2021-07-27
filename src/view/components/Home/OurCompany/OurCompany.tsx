@@ -18,14 +18,14 @@ const OurCompany : React.FC = props => {
             <ScreenDetector onActive={() => setActive(true)} onUnactive={() => setActive(false)} />
             <div className={`half left flex-row`}>
                 <div className={`picture one flex-1 flex-row`}>
-                    <PictureReveal active={active} className={`picture-one-container`} delay='1s' backgroundImageUrl={entreprise1} />
+                    <PictureReveal active={active} className={`picture-one-container`} delay='0.6s' backgroundImageUrl={entreprise1} />
                 </div>
                 <div className={`flex-column flex-1`}>
                     <div className={`picture two flex-1 flex-column`}>
-                        <PictureReveal active={active} className={`picture-two-container`} delay='1.2s' backgroundImageUrl={entreprise2} />
+                        <PictureReveal active={active} className={`picture-two-container`} delay='0.8s' backgroundImageUrl={entreprise2} />
                     </div>
                     <div className={`picture three flex-1`}>
-                        <PictureReveal active={active} className={`picture-three-container`} delay='1.4s' backgroundImageUrl={entreprise3} />
+                        <PictureReveal active={active} className={`picture-three-container`} delay='1s' backgroundImageUrl={entreprise3} />
                     </div>
                 </div>
             </div>
