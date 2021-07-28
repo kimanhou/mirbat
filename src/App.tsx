@@ -4,6 +4,7 @@ import './App.scss';
 import CompanyPage from './view/components/CompanyPage/CompanyPage';
 import Home from './view/components/Home/Home';
 import LocalContext from './view/components/LocalisationContext/LocalContext';
+import ProjectsPage from './view/components/Projects/ProjectsPage';
 import ScrollToTop from './view/components/ScrollToTop/ScrollToTop';
 
 const App : React.FunctionComponent = props => {
@@ -16,8 +17,8 @@ const App : React.FunctionComponent = props => {
                         <Route exact path={["/entreprise"]}>
                             <CompanyPage />
                         </Route>
-                        <Route exact path={["/contact"]}>
-                            {/* <Contact /> */}
+                        <Route exact path={["/projets"]}>
+                            <ProjectsPage />
                         </Route>
                         <Route exact path={["/"]}>
                             <Home />

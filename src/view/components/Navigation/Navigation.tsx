@@ -15,8 +15,8 @@ const Navigation : React.FC<INavigationProps> = props => {
     return (
         <div className={`navigation ${visibleClassName}`}>
             <NavigationLink text={new Text('Notre entreprise', 'Notre entreprise')} to='/entreprise' isVisible={props.isVisible} setIsVisible={props.setIsVisible} transitionDelay='0.8s' />
-            <NavigationSubLink text='Notre équipe' to='/entreprise#company-team' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
-            <NavigationSubLink text='Nos valeurs' to='/entreprise#company-values' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
+            <NavigationSubLink text='Notre équipe' to='/entreprise#equipe' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
+            <NavigationSubLink text='Nos valeurs' to='/entreprise#valeurs' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
 
             <div className={`spacing`}></div>
 

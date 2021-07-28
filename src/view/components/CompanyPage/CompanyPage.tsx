@@ -29,7 +29,7 @@ const CompanyPage : React.FC = props => {
                 Donec imperdiet eu sapien id interdum.
             </p>
 
-            <FadeIn className={`team ${isTeamActiveClassName} section`} id='company-team'>
+            <FadeIn className={`team ${isTeamActiveClassName} section`} id='equipe'>
                 <ScreenDetector className={`team-screen-detector`} onActive={() => setIsTeamActive(true)} onUnactive={() => setIsTeamActive(false)}/>
                 <div className={`flex-row`}>
                     <div className={`left flex-1`}>
@@ -47,7 +47,7 @@ const CompanyPage : React.FC = props => {
                 
             </FadeIn>
 
-            <FadeIn className={`values ${isValuesActiveClassName} section`} id={`company-values`}>
+            <FadeIn className={`values ${isValuesActiveClassName} section`} id={`valeurs`}>
                 <ScreenDetector className={`values-screen-detector`} onActive={() => setIsValuesActive(true)} onUnactive={() => setIsValuesActive(false)}/>
                 <div className={`flex-row`}>
                     <div className={`left flex-1 values-content`}>

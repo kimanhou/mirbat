@@ -1,0 +1,12 @@
+.nos-projets-page {
+    .nos-projets-container {
+        margin-bottom: var(--size-main-margin);
+        flex-wrap: wrap;
+        >* {
+            margin-right: var(--size-margin-20);
+        }
+        >:nth-child(5n) {
+            margin-right: 0;
+        }
+    }
+}

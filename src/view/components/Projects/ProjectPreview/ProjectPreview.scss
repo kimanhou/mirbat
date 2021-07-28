@@ -1,6 +1,6 @@
 .project-preview {
     height: 70vh;
-    width: calc((100vw - (2 * var(--size-margin-20)) - (4 * var(--size-margin-20))) / 5);
+    width: calc((100vw - (2 * 60px) - (4 * var(--size-margin-20))) / 5);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -10,6 +10,7 @@
     background-position-y: center;
     position: relative;
     cursor: pointer;
+    margin-bottom: var(--size-margin-20);
     >.hover-shadow {
         position: absolute;
         top: calc(var(--size-margin-10) * (-1));
