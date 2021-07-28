@@ -15,17 +15,17 @@ const Navigation : React.FC<INavigationProps> = props => {
     return (
         <div className={`navigation ${visibleClassName}`}>
             <NavigationLink text={new Text('Notre entreprise', 'Notre entreprise')} to='/entreprise' isVisible={props.isVisible} setIsVisible={props.setIsVisible} transitionDelay='0.8s' />
-            <NavigationSubLink text='Nos valeurs' to='/entreprise'/>
-            <NavigationSubLink text='Notre équipe' to='/entreprise'/>
+            <NavigationSubLink text='Notre équipe' to='/entreprise#company-team' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
+            <NavigationSubLink text='Nos valeurs' to='/entreprise#company-values' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
 
             <div className={`spacing`}></div>
 
             <NavigationLink text={new Text('Nos projets', 'Nos projets')} to='/projets'  isVisible={props.isVisible} setIsVisible={props.setIsVisible} transitionDelay='1s'/>
-            <NavigationSubLink text='Catégorie 1' to='/projets'/>
-            <NavigationSubLink text='Catégorie 2' to='/projets'/>
-            <NavigationSubLink text='Catégorie 3' to='/projets'/>
-            <NavigationSubLink text='Catégorie 4' to='/projets'/>
-            <NavigationSubLink text='Catégorie 5' to='/projets'/>
+            <NavigationSubLink text='Catégorie 1' to='/projets' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
+            <NavigationSubLink text='Catégorie 2' to='/projets' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
+            <NavigationSubLink text='Catégorie 3' to='/projets' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
+            <NavigationSubLink text='Catégorie 4' to='/projets' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
+            <NavigationSubLink text='Catégorie 5' to='/projets' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
 
             <div className={`spacing`}></div>
 

@@ -19,7 +19,7 @@ const NavigationLink : React.FC<INavigationLinkProps> = props => {
     const thickTransition = `transform .2s cubic-bezier(1,.07,1,.9), width 1s ${props.transitionDelay} cubic-bezier(1,.07,1,.9)`;
 
     return (
-        <Link className={`navigation-link ${visibleClassName}`} to={props.to} >
+        <Link className={`navigation-link ${visibleClassName}`} to={props.to} onClick={() => props.setIsVisible(false)}>
             {props.text.getText(localisation)}
             <div className={`underlines`}>
                 <div className={`thin-underline`} style={{ transitionDelay: props.transitionDelay }}></div>

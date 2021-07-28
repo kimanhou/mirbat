@@ -22,10 +22,12 @@ const Home : React.FC = props => {
                     <div className={`home-tag-line`}>
                         Lorem ipsum dolor sit amet, <br></br>consectetur adipiscing elit. 
                     </div>
-                    <OurCompany />
-                    <OurProjects />
-                    <Contact />
-                    <Footer />
+                    <div className={`home-content-wrapper`}>
+                        <OurCompany />
+                        <OurProjects />
+                        <Contact />
+                        <Footer />
+                    </div>
                 </div>
             </div>
         </div>

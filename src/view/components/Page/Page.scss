@@ -1,0 +1,98 @@
+.page {
+    position: relative;
+    >.page-wrapper {
+        position: relative;
+        margin: var(--size-margin-60) var(--size-margin-60) var(--size-margin-20);
+        >.header {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        >.content {
+            transform: translateX(0px);
+            pointer-events: none;
+            >.content-moving {
+                position: relative;
+                overflow: hidden;
+                transition: left .4s .4s cubic-bezier(1,.07,1,.9);
+                left: 0px;
+                pointer-events: auto;
+                background-color: var(--color-white);
+                >.header {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                }
+                >.page-content {
+                    margin-top: calc(2 * var(--size-main-margin));
+                    >.page-title {
+                        text-align: center;
+                        font-size: 4rem;
+                        text-transform: uppercase;
+                        margin-bottom: var(--size-main-margin);
+                        cursor: default;
+                        >.page-title-container {
+                            display: inline-block;
+                            position: relative;
+                            >.thick-underline {
+                                position: absolute;
+                                top: calc(100% + 5px);
+                                left: 0;
+                                width: 0;
+                                height: 8px;
+                                background-color: var(--color-black);
+                                transition: transform .2s cubic-bezier(1,.07,1,.9), width 1s cubic-bezier(1,.07,1,.9);
+                            }
+                        }
+                        >.underlines {
+                            margin-top: 5px;
+                            margin-bottom: var(--size-margin-10);
+                            >.thin-underline {
+                                width: 0;
+                                height: 1px;
+                                background-color: var(--color-black);
+                                transition: width 1s cubic-bezier(1,.07,1,.9);
+                            }
+                        }
+                        &.title-active {
+                            >.page-title-container {
+                                >.thick-underline {
+                                    width: 70px;
+                                }
+                            }
+                            >.underlines {
+                                >.thin-underline {
+                                    width: calc(100% + 100vw);
+                                }
+                            }
+                        }
+                        &:hover {
+                            >.page-title-container {
+                                >.thick-underline {
+                                    transform: translateX(40px);
+                                }
+                            }
+                        }
+                    }
+                }
+                &.nav-visible {
+                    left: 400px;
+                    transition-delay: 0s;
+                }
+            }
+        }
+    }
+    >.page-cover {
+        position: absolute;
+        top: -60px;
+        right: 0;
+        bottom: -20px;
+        left: 460px;
+        transition: background-color .4s 0 cubic-bezier(1,.07,1,.9);
+        pointer-events: none;
+        &.nav-visible {
+            background-color: rgba(60, 60, 65, 0.5);
+            transition-delay: .4s;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.notre-entreprise-page {
+    .section {
+        margin: var(--size-main-margin) 0;
+        >.flex-row {
+            >.flex-1 {
+                >.picture-reveal {
+                    height: 100%;
+                    background-position-x: center;
+                    background-position-y: center;
+                }
+                &.team-content {
+                    margin: var(--size-margin-40) 0 var(--size-main-margin) var(--size-main-margin);
+                }
+                &.values-content {
+                    margin: var(--size-margin-40) var(--size-main-margin) var(--size-main-margin) 0;
+                }
+            }
+        }
+    }
+}

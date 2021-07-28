@@ -1,17 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import './NavigationSubLink.scss';
 
 interface INavigationSubLinkProps {
     to : string;
     text : string;
+    isVisible : boolean;
+    setIsVisible : (isVisible : boolean) => void;
 }
 
 const NavigationSubLink : React.FC<INavigationSubLinkProps> = props => {
     return (
-        <Link className={`navigation-sub-link`} to={props.to} >
+        <HashLink className={`navigation-sub-link`} to={props.to} onClick={() => props.setIsVisible(false)}>
             {props.text}
-        </Link>
+        </HashLink>
     );
 }
 

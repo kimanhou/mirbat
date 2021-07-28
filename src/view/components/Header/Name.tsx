@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Name.scss';
 
 interface INameProps {
@@ -39,9 +40,9 @@ const Name : React.FC<INameProps> = props => {
     }, []);
 
     return (
-        <div className={`name ${isWhiteClassName} ${isTransparentClassName} ${noMarginLeftMobileClassName}`}>
+        <Link className={`name ${isWhiteClassName} ${isTransparentClassName} ${noMarginLeftMobileClassName}`} to='/'>
             {writtenText}
-        </div>
+        </Link>
     );
 }
 

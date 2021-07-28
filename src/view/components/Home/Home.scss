@@ -41,6 +41,12 @@
                 left: 400px;
                 transition-delay: 0s;
             }
+            >.home-content-wrapper {
+                margin: 0 var(--size-margin-40);
+                >.home-notre-entreprise, >.home-nos-projets {
+                    overflow: hidden;
+                }
+            }
         }
     }
 }
