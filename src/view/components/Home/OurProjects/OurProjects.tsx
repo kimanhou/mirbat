@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Text from '../../../../model/Text';
 import FadeIn from '../../FadeIn/FadeIn';
 import LinkWithBackground from '../../Navigation/LinkWithBackground/LinkWithBackground';
 import NavigationLink from '../../Navigation/NavigationLink';
 import ProjectPreview from '../../Projects/ProjectPreview/ProjectPreview';
-import ScreenDetector from '../../ScreenDetector/screenDetector';
 import './OurProjects.scss';
 import project1 from '../../../../images/projects/project-1.jpg';
 import project2 from '../../../../images/projects/project-2.jpg';

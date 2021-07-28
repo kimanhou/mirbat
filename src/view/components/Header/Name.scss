@@ -14,3 +14,15 @@
         transition-delay: 0s;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .name {
+        line-height: 40px;
+        font-size: 40px;
+        margin-left: var(--size-margin-20);
+        &.no-margin-left-mobile {
+            margin-left: 0;
+            text-align: left;
+        }
+    }
+}

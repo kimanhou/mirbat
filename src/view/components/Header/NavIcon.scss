@@ -40,3 +40,32 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .nav-icon {
+        width: 40px;
+        >span {
+            height: 4px;
+            margin: 4px 0;
+            &.span-one {
+                width: 50%;
+            }
+            &.span-two {
+                width: 100%;
+            }
+            &.span-three {
+                width: 75%;
+            }
+        }
+        &.checked {
+            >span{
+                &.span-one {
+                    transform: rotatez(45deg) translate(7px,0px);
+                }
+                &.span-three {
+                    transform: translate(18px, -6px) rotatez(45deg);
+                }
+            }
+        }
+    }
+}

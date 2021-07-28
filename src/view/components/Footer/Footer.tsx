@@ -16,7 +16,7 @@ const Footer : React.FC<IFooterProps> = props => {
             <ScreenDetector onActive={() => setActive(true)} onUnactive={() => setActive(false)} />
             <div className={`thick-underline`}></div>
             <div className={`name-container`}>
-                <Name isNavVisible={false}/>
+                <Name isNavVisible={false} noMarginLeftMobile />
             </div>
             <div className={`footer-content flex-row`}>
                 <div className={`footer-copyright`}>

@@ -4,10 +4,12 @@ import './Name.scss';
 interface INameProps {
     iswhite ?: boolean;
     isNavVisible : boolean;
+    noMarginLeftMobile ?: boolean;
 }
 
 const Name : React.FC<INameProps> = props => {
     const isWhiteClassName = props.iswhite ? 'white' : '';
+    const noMarginLeftMobileClassName = props.noMarginLeftMobile ? 'no-margin-left-mobile' : '';
     const isTransparentClassName = props.iswhite === true && props.isNavVisible ? "transparent" : "";
 
     var [writtenText, setWrittenText] = useState('');
@@ -37,7 +39,7 @@ const Name : React.FC<INameProps> = props => {
     }, []);
 
     return (
-        <div className={`name ${isWhiteClassName} ${isTransparentClassName}`}>
+        <div className={`name ${isWhiteClassName} ${isTransparentClassName} ${noMarginLeftMobileClassName}`}>
             {writtenText}
         </div>
     );

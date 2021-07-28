@@ -18,3 +18,20 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .home-nos-projets {
+        &.flex-row {
+            flex-direction: column;
+            >.right {
+                &.flex-row {
+                    flex-direction: column;
+                    margin-top: var(--size-main-margin);
+                    >:nth-child(2) {
+                        margin: var(--size-margin-20) 0;
+                    }
+                }
+            }
+        }
+    }
+}

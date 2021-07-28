@@ -7,6 +7,7 @@ interface IScreenDetectorProps {
 }
 
 const ScreenDetector : React.FC<IScreenDetectorProps> = props => {
+    const classNameClassName = props.className !== undefined ? props.className : '';
     const detectorRef = useRef<HTMLDivElement>(null);
     const isElementInViewport = () => {
         const el = detectorRef.current!;
@@ -35,7 +36,7 @@ const ScreenDetector : React.FC<IScreenDetectorProps> = props => {
     }, []);
 
     return (
-            <div className={`screen-detector ${props.className}`} ref={detectorRef}>
+            <div className={`screen-detector ${classNameClassName}`} ref={detectorRef}>
             </div>
     );
 }

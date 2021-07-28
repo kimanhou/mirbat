@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Header.scss';
 import Name from './Name';
 import NavIcon from './NavIcon';

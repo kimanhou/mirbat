@@ -54,3 +54,22 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .home-notre-entreprise {
+        &.flex-row {
+            flex-direction: column;
+            >.half {
+                &.left {
+                    width: 100%;
+                    margin-right: 0;
+                    .picture {
+                        &.one {
+                            height: 500px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

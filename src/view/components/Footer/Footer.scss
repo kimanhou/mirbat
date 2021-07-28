@@ -6,6 +6,9 @@
         margin-left: 40px;
         background-color: var(--color-black);
         transition: transform .2s cubic-bezier(1,.07,1,.9), width 1s cubic-bezier(1,.07,1,.9);
+        &:hover {
+            transform: translateX(40px);
+        }
     }
     >.name-container {
         height: 70px;
@@ -38,5 +41,13 @@
     .footer {
         display: block;
         text-align: center;
+        >.thick-underline {
+            margin-left: 0;
+        }
+        >.footer-content {
+            &.flex-row {
+                flex-direction: column;
+            }
+        }
     }
 }
