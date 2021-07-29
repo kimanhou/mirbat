@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, HashRouter, Route, Router, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.scss';
 import CompanyPage from './view/components/CompanyPage/CompanyPage';
 import Home from './view/components/Home/Home';

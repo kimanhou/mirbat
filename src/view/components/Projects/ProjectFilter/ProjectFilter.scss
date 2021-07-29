@@ -1,0 +1,19 @@
+.projet-filtre {
+    >.section-title {
+        cursor: pointer;
+        &.active {
+            >.underlines {
+                >.thin-underline {
+                    width: 100%;
+                }
+            }
+        }
+        &:hover {
+            >.underlines {
+                >.thick-underline {
+                    transform: unset;
+                }
+            }
+        }
+    }
+}

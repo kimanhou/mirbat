@@ -5,11 +5,12 @@ import LinkWithBackground from '../../Navigation/LinkWithBackground/LinkWithBack
 import NavigationLink from '../../Navigation/NavigationLink';
 import ProjectPreview from '../../Projects/ProjectPreview/ProjectPreview';
 import './OurProjects.scss';
-import project1 from '../../../../images/projects/project-1.jpg';
-import project2 from '../../../../images/projects/project-2.jpg';
-import project3 from '../../../../images/projects/project-3.jpg';
+import Project from '../../../../model/Project';
 
 const OurProjects : React.FC = props => {
+    const projects = Project.getAllProjects();
+    const lastProjects = projects.slice(0, 3);
+
     return (
         <FadeIn className={`home-nos-projets flex-row`}>
             <div className={`left`}>
@@ -34,9 +35,7 @@ const OurProjects : React.FC = props => {
                     </div>
             </div>
             <div className={`right flex-row`}>
-                <ProjectPreview backgroundImageUrl={project1}/>
-                <ProjectPreview backgroundImageUrl={project2}/>
-                <ProjectPreview backgroundImageUrl={project3}/>
+                {lastProjects.map(t => <ProjectPreview project={t} />)}
             </div>
         </FadeIn>
     );
