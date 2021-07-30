@@ -1,14 +1,16 @@
 import React from 'react';
-import surfaceIcon from '../../../../../images/projects/location.png';
+import locationIcon from '../../../../../images/projects/location.png';
+import locationIconBlack from '../../../../../images/projects/location-black.png';
 import ProjectInfo from './ProjectInfo';
 
 interface IProjectLocationProps {
     location : string;
+    black ?: boolean;
 }
 
 const ProjectLocation : React.FC<IProjectLocationProps> = props => {
     return (
-        <ProjectInfo imageSrc={surfaceIcon} info={props.location} />
+        <ProjectInfo imageSrc={locationIcon} info={props.location} imageSrcBlack={locationIconBlack} black={props.black} />
     );
 }
 

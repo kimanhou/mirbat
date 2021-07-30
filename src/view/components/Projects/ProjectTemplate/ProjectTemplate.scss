@@ -1,3 +1,157 @@
 .project-template {
-    
+    position: relative;
+    >.project-template-wrapper {
+        position: relative;
+        // margin: var(--size-margin-60) var(--size-margin-60) var(--size-margin-20);
+        >.header {
+            position: absolute;
+            top: var(--size-margin-60);
+            left: var(--size-margin-60);
+        }
+        >.content {
+            transform: translateX(0px);
+            pointer-events: none;
+            >.content-moving {
+                position: relative;
+                overflow: hidden;
+                transition: left .4s .4s cubic-bezier(1,.07,1,.9);
+                left: 0px;
+                pointer-events: auto;
+                background-color: var(--color-white);
+                >.header {
+                    position: fixed;
+                    top: var(--size-margin-60);
+                    left: var(--size-margin-60);
+                }
+                >.project-template-content {
+                    >.project-template-title {
+                        height: 80vh;
+                        padding-left: var(--size-margin-60);
+                        color: var(--color-white);
+                        cursor: default;
+                        background: url('../../../../images/projects/04/project-template-1.jpg') no-repeat center center; 
+                        -webkit-background-size: cover;
+                        -moz-background-size: cover;
+                        -o-background-size: cover;
+                        background-size: cover;
+                        >.project-template-title-container {
+                            margin-top: 50vh;
+                            display: inline-block;
+                            position: relative;
+                            font-size: 1.4rem;
+                            >.project-title {
+                                font-size: 5rem;
+                                text-transform: uppercase;
+                            }
+                            >.underlines {
+                                margin-top: var(--size-margin-20);
+                                margin-bottom: 30px;
+                                >.thin-underline {
+                                    width: 300px;
+                                    height: 1px;
+                                    background-color: var(--color-white);
+                                    transition: width 1s cubic-bezier(1,.07,1,.9);
+                                }
+                                >.thick-underline {
+                                    width: 300px;
+                                    height: 8px;
+                                    background-color: var(--color-white);
+                                    transition: transform .2s cubic-bezier(1,.07,1,.9), width 1s cubic-bezier(1,.07,1,.9);
+                                }
+                            }
+
+                            &:hover {
+                                >.underlines {
+                                    >.thick-underline {
+                                        transform: translateX(40px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    >.project-template-details {
+                        padding: var(--size-margin-60);
+                        align-items: flex-start;
+                        >.project-template-description {
+                            line-height: 1.6rem;
+                        }
+                        >.project-template-info {
+                            width: 200px;
+                            border: solid 1px var(--color-black);
+                            margin-left: var(--size-margin-20);
+                            >.thick-underline {
+                                width: 50px;
+                                height: 10px;
+                                background-color: var(--color-black);
+                                transition: transform .2s cubic-bezier(1,.07,1,.9), width 1s cubic-bezier(1,.07,1,.9);
+                            }
+                            >.project-template-info-content {
+                                padding: var(--size-margin-10);
+                                >p {
+                                    &.no-icon {
+                                        margin-left: calc(1.2rem + 5px);
+                                    }
+                                }
+                            }
+                            &:hover {
+                                >.thick-underline {
+                                    transform: translateX(calc(1.2rem + 5px));
+                                }
+                            }
+                        }
+                    }
+
+                    >.project-template-gallery {
+                        padding-left: var(--size-margin-60);
+                        margin-bottom: var(--size-main-margin);
+                        >.project-template-gallery-images {
+                            height: 300px;
+                            margin-bottom: var(--size-margin-20);
+                            transition: transform .4s cubic-bezier(1,.07,1,.9);
+                        }
+                        >.project-template-gallery-arrows {
+                            >img {
+                                width: 40px;
+                                cursor: pointer;
+                                transition: transform .2s ease-in, opacity .4s cubic-bezier(1,.07,1,.9);
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
+                                &.greyed-out {
+                                    opacity: 0.4;
+                                    cursor: initial;
+                                    &:hover {
+                                        transform: unset;
+                                    }
+                                }
+                            }
+                            >:first-child {
+                                margin-right: var(--size-margin-10);
+                            }
+                        }
+                    }
+                    >.project-template-footer-container {
+                        margin: 0 var(--size-margin-60);
+                    }
+                }
+                &.nav-visible {
+                    left: 400px;
+                    transition-delay: 0s;
+                }
+            }
+        }
+    }
+    >.project-template-cover {
+        position: absolute;
+        top: -60px;
+        right: 0;
+        bottom: -20px;
+        left: 460px;
+        transition: background-color .4s 0 cubic-bezier(1,.07,1,.9);
+        pointer-events: none;
+        &.nav-visible {
+            background-color: rgba(60, 60, 65, 0.5);
+            transition-delay: .4s;
+        }
+    }
 }
