@@ -6,12 +6,12 @@ import './ProjectFilter.scss';
 interface IProjectFilterProps {
     category : ProjectCategory;
     active : boolean;
-    setActiveCategory : (category : ProjectCategory) => void;
+    onClickCategory : (category : ProjectCategory) => void;
 }
 
 const ProjectFilter : React.FC<IProjectFilterProps> = props => {
     const onClick = () => {
-        props.setActiveCategory(props.category);
+        props.onClickCategory(props.category);
     }
 
     return (

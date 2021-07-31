@@ -5,6 +5,7 @@ import ProjectSurface from './ProjectInfo/ProjectSurface';
 import ProjectDuration from './ProjectInfo/ProjectDuration';
 import ProjectLocation from './ProjectInfo/ProjectLocation';
 import Project from '../../../../model/Project';
+import { Link } from 'react-router-dom';
 
 interface IProjectPreviewProps {
     project : Project;
@@ -12,7 +13,7 @@ interface IProjectPreviewProps {
 
 const ProjectPreview : React.FC<IProjectPreviewProps> = props => {
     return (
-        <div className={`project-preview`} style={{ backgroundImage: `url(${props.project.images[0].url})` }}>
+        <Link className={`project-preview`} to={props.project.getLink()} style={{ backgroundImage: `url(${props.project.images[0].url})` }}>
             <div className={`hover-shadow`}></div>
             <div className={`text flex-column`}>
                 <div className={`project-title uppercase`}>
@@ -28,7 +29,7 @@ const ProjectPreview : React.FC<IProjectPreviewProps> = props => {
                     <BackgroundOnHover className={`read-more-background`} delay='.2s' />
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }
 

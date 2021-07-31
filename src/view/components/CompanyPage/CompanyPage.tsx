@@ -7,8 +7,13 @@ import ScreenDetector from '../ScreenDetector/screenDetector';
 import './CompanyPage.scss';
 import company1 from '../../../images/company/company-1.jpg';
 import company2 from '../../../images/company/company-2.jpg';
+import { ProjectCategory } from '../../../model/Project';
 
-const CompanyPage : React.FC = props => {
+interface ICompanyPageProps {
+    setActiveCategory : (activeCategory : ProjectCategory) => void;
+}
+
+const CompanyPage : React.FC<ICompanyPageProps> = props => {
     const [ isTeamActive, setIsTeamActive ] = useState(false);
     const isTeamActiveClassName = isTeamActive ? 'active' : '';
 
@@ -16,7 +21,7 @@ const CompanyPage : React.FC = props => {
     const isValuesActiveClassName = isValuesActive ? 'active' : '';
     
     return (
-        <Page className={`notre-entreprise-page`} title='Notre entreprise'>
+        <Page className={`notre-entreprise-page`} title='Notre entreprise' setActiveCategory={props.setActiveCategory}>
             <p><b>
                 Pellentesque euismod pulvinar lacus, id pulvinar elit gravida quis. 
                 Nulla semper tellus congue nulla semper faucibus. Aenean id nunc dolor.

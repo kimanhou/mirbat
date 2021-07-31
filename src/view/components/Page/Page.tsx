@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ProjectCategory } from '../../../model/Project';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Navigation from '../Navigation/Navigation';
@@ -8,6 +9,7 @@ import './Page.scss';
 interface IPageProps {
     className ?: string;
     title : string;
+    setActiveCategory : (activeCategory : ProjectCategory) => void;
 }
 
 const Page : React.FC<IPageProps> = props => {
@@ -23,7 +25,7 @@ const Page : React.FC<IPageProps> = props => {
         <div className={`page ${classNameClassName}`}>
             <div className={`page-wrapper`}>
                 <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} />
-                <Navigation isVisible={isNavVisible} setIsVisible={setIsNavVisible} />
+                <Navigation isVisible={isNavVisible} setIsVisible={setIsNavVisible} setActiveCategory={props.setActiveCategory} />
                 <div className={`content`}>
                     <div className={`content-moving ${isNavVisibleClassName}`}>
                         <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} />

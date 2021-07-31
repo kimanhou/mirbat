@@ -29,11 +29,13 @@
                         padding-left: var(--size-margin-60);
                         color: var(--color-white);
                         cursor: default;
-                        background: url('../../../../images/projects/04/project-template-1.jpg') no-repeat center center; 
                         -webkit-background-size: cover;
                         -moz-background-size: cover;
                         -o-background-size: cover;
                         background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position-x: center;
+                        background-position-y: center;
                         >.project-template-title-container {
                             margin-top: 50vh;
                             display: inline-block;

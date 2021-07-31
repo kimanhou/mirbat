@@ -5,25 +5,40 @@ import './ProjectsPage.scss';
 import ProjectFilter from './ProjectFilter/ProjectFilter';
 import Project, { ProjectCategory } from '../../../model/Project';
 
-const ProjectsPage : React.FC = props => {
-    const [ activeCategory, setActiveCategory ] = useState(ProjectCategory.TOUS);
-    const isCat1Active = activeCategory === ProjectCategory.TOUS;
-    const isCat2Active = activeCategory === ProjectCategory.LOGEMENTS;
-    const isCat3Active = activeCategory === ProjectCategory.BUREAUX;
-    const isCat4Active = activeCategory === ProjectCategory.EQUIPEMENTS;
-    const isCat5Active = activeCategory === ProjectCategory.EN_COURS;
+interface IProjectsPageProps {
+    activeCategory : ProjectCategory;
+    setActiveCategory : (activeCategory : ProjectCategory) => void;
+}
+
+const ProjectsPage : React.FC<IProjectsPageProps> = props => {
+    const isCat1Active = props.activeCategory === ProjectCategory.TOUS;
+    const isCat2Active = props.activeCategory === ProjectCategory.LOGEMENTS;
+    const isCat3Active = props.activeCategory === ProjectCategory.BUREAUX;
+    const isCat4Active = props.activeCategory === ProjectCategory.EQUIPEMENTS;
+    const isCat5Active = props.activeCategory === ProjectCategory.EN_COURS;
+
+    const [isInvisible, setIsInvisible] = useState(false);
+    const isInvisibleClassname = isInvisible ? 'is-invisible' : '';
+
+    const onCategoryClick = (category : ProjectCategory) => {
+        setIsInvisible(true);
+        setTimeout(() => {
+            props.setActiveCategory(category);
+            setIsInvisible(false);
+        }, 1000);
+    }
 
     return (
-        <Page className={`nos-projets-page`} title='Nos projets'>
+        <Page className={`nos-projets-page`} title='Nos projets' setActiveCategory={props.setActiveCategory}>
             <div className={`nos-projets-filtres flex-row`}>
-                <ProjectFilter category={ProjectCategory.TOUS} active={isCat1Active} setActiveCategory={setActiveCategory} />
-                <ProjectFilter category={ProjectCategory.LOGEMENTS} active={isCat2Active} setActiveCategory={setActiveCategory} />
-                <ProjectFilter category={ProjectCategory.BUREAUX}  active={isCat3Active} setActiveCategory={setActiveCategory} />
-                <ProjectFilter category={ProjectCategory.EQUIPEMENTS}  active={isCat4Active} setActiveCategory={setActiveCategory} />
-                <ProjectFilter category={ProjectCategory.EN_COURS}  active={isCat5Active} setActiveCategory={setActiveCategory} />
+                <ProjectFilter category={ProjectCategory.TOUS} active={isCat1Active} onClickCategory={onCategoryClick} />
+                <ProjectFilter category={ProjectCategory.LOGEMENTS} active={isCat2Active} onClickCategory={onCategoryClick} />
+                <ProjectFilter category={ProjectCategory.BUREAUX}  active={isCat3Active} onClickCategory={onCategoryClick} />
+                <ProjectFilter category={ProjectCategory.EQUIPEMENTS}  active={isCat4Active} onClickCategory={onCategoryClick} />
+                <ProjectFilter category={ProjectCategory.EN_COURS}  active={isCat5Active} onClickCategory={onCategoryClick} />
             </div>
-            <div className={`nos-projets-container flex-row`}>
-                {Project.filterByCategory(activeCategory).map(t => <ProjectPreview project={t} />)}
+            <div className={`nos-projets-container flex-row ${isInvisibleClassname}`}>
+                {Project.filterByCategory(props.activeCategory).map(t => <ProjectPreview project={t} />)}
             </div>
         </Page>
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+import Project, { ProjectCategory } from '../../../model/Project';
 import Text from '../../../model/Text';
 import './Navigation.scss';
 import NavigationLink from './NavigationLink';
@@ -7,10 +8,12 @@ import NavigationSubLink from './NavigationSubLink';
 interface INavigationProps {
     isVisible : boolean;
     setIsVisible : (isVisible : boolean) => void;
+    setActiveCategory : (activeCategory : ProjectCategory) => void;
 }
 
 const Navigation : React.FC<INavigationProps> = props => {
     const visibleClassName = props.isVisible ? 'visible' : '';
+    const projectCategories = Project.getAllCategories().filter(t => t !== ProjectCategory.TOUS);
 
     return (
         <div className={`navigation ${visibleClassName}`}>
@@ -21,11 +24,7 @@ const Navigation : React.FC<INavigationProps> = props => {
             <div className={`spacing`}></div>
 
             <NavigationLink text={new Text('Nos projets', 'Nos projets')} to='/projets'  isVisible={props.isVisible} setIsVisible={props.setIsVisible} transitionDelay='1s'/>
-            <NavigationSubLink text='Catégorie 1' to='/projets' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
-            <NavigationSubLink text='Catégorie 2' to='/projets' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
-            <NavigationSubLink text='Catégorie 3' to='/projets' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
-            <NavigationSubLink text='Catégorie 4' to='/projets' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
-            <NavigationSubLink text='Catégorie 5' to='/projets' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
+            {projectCategories.map(t => <NavigationSubLink text={t} to='/projets' isVisible={props.isVisible} setIsVisible={props.setIsVisible} activeCategory={t} setActiveCategory={props.setActiveCategory} />)}
 
             <div className={`spacing`}></div>
 
