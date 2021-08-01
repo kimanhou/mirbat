@@ -5,9 +5,13 @@ import LinkWithBackground from '../../Navigation/LinkWithBackground/LinkWithBack
 import NavigationLink from '../../Navigation/NavigationLink';
 import ProjectPreview from '../../Projects/ProjectPreview/ProjectPreview';
 import './OurProjects.scss';
-import Project from '../../../../model/Project';
+import Project, { ProjectCategory } from '../../../../model/Project';
 
-const OurProjects : React.FC = props => {
+interface IOurProjectsProps {
+    setActiveCategory : (activeCategory : ProjectCategory) => void;
+}
+
+const OurProjects : React.FC<IOurProjectsProps> = props => {
     const projects = Project.getAllProjects();
     const lastProjects = projects.slice(0, 3);
 
@@ -29,7 +33,7 @@ const OurProjects : React.FC = props => {
                         Pellentesque tempus ut nibh eget ullamcorper.
                     </div>
                     <div className={`voir-projets-container flex-row`}>
-                        <LinkWithBackground className={`voir-projets`} to='/projets'>
+                        <LinkWithBackground className={`voir-projets`} to='/projets' onClick={() => props.setActiveCategory(ProjectCategory.TOUS)}>
                             Voir tous les projets
                         </LinkWithBackground>
                     </div>

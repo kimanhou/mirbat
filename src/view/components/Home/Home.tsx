@@ -29,7 +29,7 @@ const Home : React.FC<IHomeProps> = props => {
                     </div>
                     <div className={`home-content-wrapper`}>
                         <OurCompany />
-                        <OurProjects />
+                        <OurProjects setActiveCategory={props.setActiveCategory}/>
                         <Contact />
                         <Footer />
                     </div>

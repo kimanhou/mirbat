@@ -6,12 +6,13 @@ import './LinkWithBackground.scss';
 interface ILinkWithBackgroundProps {
     to : string;
     className ?: string;
+    onClick ?: () => void;
 }
 
 const LinkWithBackground : React.FC<ILinkWithBackgroundProps> = props => {
     const className = props.className !== undefined ? props.className : '';
     return (
-        <Link className={`link-with-background ${className}`} to={props.to} >
+        <Link className={`link-with-background ${className}`} to={props.to} onClick={props.onClick}>
             {props.children}
             <BackgroundOnHover className={`link-with-background-background`}/>
         </Link>

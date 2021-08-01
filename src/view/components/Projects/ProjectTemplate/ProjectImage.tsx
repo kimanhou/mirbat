@@ -18,7 +18,7 @@ const ProjectImage : React.FC<IProjectImageProps> = props => {
     return (
         <div className={`project-image`}>
             <div className={`hover-shadow`}></div>
-            <img src={props.url} onLoad={onLoad}/>
+            <img src={props.url} onLoad={onLoad} alt={props.caption}/>
             <div className={`text flex-column`} style={{ width: width }}>
                 {props.caption}
             </div>
