@@ -1,6 +1,14 @@
 .notre-entreprise-page {
     .section {
         margin: var(--size-main-margin) 0;
+        position: relative;
+        >.screen-detector {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
         >.flex-row {
             >.flex-1 {
                 >.picture-reveal {
@@ -13,6 +21,27 @@
                 }
                 &.values-content {
                     margin: var(--size-margin-40) var(--size-main-margin) var(--size-main-margin) 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .notre-entreprise-page {
+        .section{
+            >.flex-row {
+                flex-direction: column;
+                &.values-flex-row {
+                    flex-direction: column-reverse;
+                }
+                >.flex-1 {
+                    &.team-content, &.values-content {
+                        margin: var(--size-margin-40) 0;
+                    }
+                    >.picture-reveal {
+                        height: 300px;
+                    }
                 }
             }
         }

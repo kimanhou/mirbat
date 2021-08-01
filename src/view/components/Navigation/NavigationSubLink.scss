@@ -5,3 +5,10 @@
     margin-left: var(--size-margin-40);
     margin-bottom: var(--size-margin-10);
 }
+
+@media screen and (max-width: 600px) {
+    .navigation-sub-link {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+    }
+}

@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import arrowPrevious from '../../../../images/projects/arrow-left.png';
 import arrowNext from '../../../../images/projects/arrow-right.png';
 import Project, { ProjectCategory } from '../../../../model/Project';
+import FitText from '../../FitText/FitText';
 import Footer from '../../Footer/Footer';
 import Header from '../../Header/Header';
 import Navigation from '../../Navigation/Navigation';
@@ -62,6 +63,7 @@ const ProjectTemplate : React.FC<IProjectTemplateProps> = props => {
                         <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} iswhite />
                         <div className={`project-template-content`}>
                             <div className={`project-template-title`} style={{ backgroundImage: `url(${project.images[0].url})` }} >
+                                <div className={`project-template-title-container-container`}>
                                 <div className={`project-template-title-container`}>
                                     {project.getDateYear()} - {project.location}
                                     <div className={`underlines`}>
@@ -69,8 +71,9 @@ const ProjectTemplate : React.FC<IProjectTemplateProps> = props => {
                                         <div className={`thick-underline`}></div>
                                     </div>
                                     <div className={`project-title`}>
-                                        {project.title}
+                                        <FitText>{project.title}</FitText>
                                     </div>  
+                                </div>
                                 </div>
                             </div>
 

@@ -96,3 +96,22 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .page {
+        >.page-wrapper {
+            margin: var(--size-margin-60) var(--size-margin-30) var(--size-margin-20);
+            >.content { 
+                >.content-moving {
+                    >.page-content {
+                        margin-top: calc(3 * var(--size-main-margin));
+                        >.page-title {
+                            font-size: 2.5rem;
+                            margin-bottom: calc(2 * var(--size-main-margin));
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -36,36 +36,45 @@
                         background-position-x: center;
                         background-position-y: center;
                         margin-bottom: var(--size-margin-60);
-                        >.project-template-title-container {
-                            margin-top: 50vh;
-                            display: inline-block;
-                            position: relative;
-                            font-size: 1.4rem;
-                            >.project-title {
-                                font-size: 5rem;
-                                text-transform: uppercase;
-                            }
-                            >.underlines {
-                                margin-top: var(--size-margin-20);
-                                margin-bottom: 30px;
-                                >.thin-underline {
-                                    width: 300px;
-                                    height: 1px;
-                                    background-color: var(--color-white);
-                                    transition: width 1s cubic-bezier(1,.07,1,.9);
+                        >.project-template-title-container-container {
+                            position: absolute;
+                            top: 0;
+                            left: 30px;
+                            right: 30px;
+                            height: 80vh;
+                            display: flex;
+                            align-items: flex-end;
+                            >.project-template-title-container {
+                                margin-bottom: var(--size-margin-20);
+                                display: inline-block;
+                                position: relative;
+                                font-size: 1.4rem;
+                                >.project-title {
+                                    font-size: 5rem;
+                                    text-transform: uppercase;
                                 }
-                                >.thick-underline {
-                                    width: 300px;
-                                    height: 8px;
-                                    background-color: var(--color-white);
-                                    transition: transform .2s cubic-bezier(1,.07,1,.9), width 1s cubic-bezier(1,.07,1,.9);
-                                }
-                            }
-
-                            &:hover {
                                 >.underlines {
+                                    margin-top: var(--size-margin-20);
+                                    margin-bottom: 30px;
+                                    >.thin-underline {
+                                        width: 300px;
+                                        height: 1px;
+                                        background-color: var(--color-white);
+                                        transition: width 1s cubic-bezier(1,.07,1,.9);
+                                    }
                                     >.thick-underline {
-                                        transform: translateX(40px);
+                                        width: 300px;
+                                        height: 8px;
+                                        background-color: var(--color-white);
+                                        transition: transform .2s cubic-bezier(1,.07,1,.9), width 1s cubic-bezier(1,.07,1,.9);
+                                    }
+                                }
+
+                                &:hover {
+                                    >.underlines {
+                                        >.thick-underline {
+                                            transform: translateX(40px);
+                                        }
                                     }
                                 }
                             }
@@ -138,6 +147,7 @@
                             }
                         }
                     }
+
                     >.project-template-footer-container {
                         margin: 0 var(--size-margin-60);
                     }
@@ -160,6 +170,67 @@
         &.nav-visible {
             background-color: rgba(60, 60, 65, 0.5);
             transition-delay: .4s;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .project-template {
+        >.project-template-wrapper {
+            >.header {
+                top: var(--size-margin-30);
+                left: var(--size-margin-30);
+            }
+            >.content {
+                >.content-moving {
+                    >.header {
+                        position: fixed;
+                        top: var(--size-margin-30);
+                        left: var(--size-margin-30);
+                    }
+                    >.project-template-content {
+                        >.project-template-title {
+                            padding-left: var(--size-margin-30);
+                            margin-bottom: var(--size-margin-60);
+                            >.project-template-title-container-container {
+                                >.project-template-title-container {
+                                    margin-bottom: var(--size-margin-10);
+                                    font-size: 1.4rem;
+                                    max-width: calc(100vw - (2 * var(--size-margin-30)));
+                                    >.project-title {
+                                        font-size: 2.4rem;
+                                    }
+                                    >.underlines {
+                                        margin-top: var(--size-margin-20);
+                                        margin-bottom: 30px;
+                                        >.thin-underline {
+                                            width: 100%;
+                                        }
+                                        >.thick-underline {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        >.project-template-details {
+                            padding: var(--size-margin-30);
+                            flex-direction: column;
+                            >.project-template-info {
+                                width: 100%;
+                                margin-left: 0;
+                            }
+                        }
+                        >.project-template-gallery {
+                            padding-left: var(--size-margin-30);
+                            margin: var(--size-margin-60) 0;
+                        }
+                        >.project-template-footer-container {
+                            margin: 0 var(--size-margin-30);
+                        }
+                    }
+                }
+            }
         }
     }
 }

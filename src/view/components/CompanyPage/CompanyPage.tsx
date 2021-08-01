@@ -54,7 +54,7 @@ const CompanyPage : React.FC<ICompanyPageProps> = props => {
 
             <FadeIn className={`values ${isValuesActiveClassName} section`} id={`valeurs`}>
                 <ScreenDetector className={`values-screen-detector`} onActive={() => setIsValuesActive(true)} onUnactive={() => setIsValuesActive(false)}/>
-                <div className={`flex-row`}>
+                <div className={`flex-row values-flex-row`}>
                     <div className={`left flex-1 values-content`}>
                         <SectionTitle title='Nos valeurs' active={isValuesActive}/>
                         <span className={`highlighted-char`}>D</span>onec pulvinar fringilla ultricies. 

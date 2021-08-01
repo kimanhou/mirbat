@@ -17,3 +17,12 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .projet-filtre {
+        >.section-title {
+            font-size: 1.5rem;
+            margin-bottom: var(--size-margin-10);
+        }
+    }
+}

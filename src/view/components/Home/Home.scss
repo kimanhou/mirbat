@@ -50,3 +50,29 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .home {
+        >.header {
+            top: var(--size-margin-10);
+            left: var(--size-margin-10);
+        }
+        >.home-content {
+            >.home-content-moving {
+                >.header {
+                    position: fixed;
+                    top: var(--size-margin-10);
+                    left: var(--size-margin-10);
+                }
+                >.home-tag-line {
+                    top: calc(var(--size-margin-10) + 40px + var(--size-main-margin));
+                    left: var(--size-margin-10);
+                    font-size: 1.8rem;
+                }
+                >.home-content-wrapper {
+                    margin: 0 var(--size-margin-10);
+                }
+            }
+        }
+    }
+}

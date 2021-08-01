@@ -21,3 +21,18 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .nos-projets-page {
+        .nos-projets-filtres {
+            >* {
+                margin: 0 var(--size-margin-10);
+            }
+        }
+        .nos-projets-container {
+            >* {
+                margin-right: 0;
+            }
+        }
+    }
+}

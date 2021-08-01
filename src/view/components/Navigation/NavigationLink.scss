@@ -38,3 +38,10 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .navigation-link {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+}

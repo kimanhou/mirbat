@@ -76,3 +76,17 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .navigation {
+        top: calc(var(--size-margin-10) + 40px + var(--size-main-margin));
+        >.spacing {
+            height: var(--size-margin-20);
+        }
+        &.visible {
+            >a {
+                left: var(--size-margin-10);
+            }
+        }
+    }
+}

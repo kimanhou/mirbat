@@ -22,7 +22,7 @@ const Footer : React.FC<IFooterProps> = props => {
                 <div className={`footer-copyright`}>
                 </div>
                 <div className={`footer-signature`}>
-                    Site web bâti par Kim Anh Nguyen &amp; Mark Poussard
+                    Site web bâti par Kim Anh Nguyen
                 </div>
                 <div className={`footer-copyright`}>
                     <span className={`year`}>&copy; 2021</span>
