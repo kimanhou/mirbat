@@ -2,7 +2,6 @@
     position: relative;
     >.project-template-wrapper {
         position: relative;
-        // margin: var(--size-margin-60) var(--size-margin-60) var(--size-margin-20);
         >.header {
             position: absolute;
             top: var(--size-margin-60);
@@ -36,6 +35,7 @@
                         background-repeat: no-repeat;
                         background-position-x: center;
                         background-position-y: center;
+                        margin-bottom: var(--size-margin-60);
                         >.project-template-title-container {
                             margin-top: 50vh;
                             display: inline-block;
@@ -71,8 +71,14 @@
                             }
                         }
                     }
+
+                    >.project-template-back-button {
+                        margin-left: var(--size-margin-60);
+                    }
+
                     >.project-template-details {
                         padding: var(--size-margin-60);
+                        padding-top: var(--size-margin-20);
                         align-items: flex-start;
                         >.project-template-description {
                             line-height: 1.6rem;

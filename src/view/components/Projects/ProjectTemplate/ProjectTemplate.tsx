@@ -11,6 +11,7 @@ import ProjectLocation from '../ProjectPreview/ProjectInfo/ProjectLocation';
 import ProjectSurface from '../ProjectPreview/ProjectInfo/ProjectSurface';
 import ProjectImage from './ProjectImage';
 import './ProjectTemplate.scss';
+import ProjectTemplateBackButton from './ProjectTemplateBackButton';
 
 interface IProjectTemplateProps {
     setActiveCategory : (activeCategory : ProjectCategory) => void;
@@ -73,6 +74,7 @@ const ProjectTemplate : React.FC<IProjectTemplateProps> = props => {
                                 </div>
                             </div>
 
+                            <ProjectTemplateBackButton />
                             <div className={`project-template-details flex-row`}>
                                 <div className={`project-template-description flex-1`}>
                                     <p>
