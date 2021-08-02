@@ -9,11 +9,16 @@ import { Link } from 'react-router-dom';
 
 interface IProjectPreviewProps {
     project : Project;
+    active : boolean;
+    transitionDelay ?: string;
 }
 
 const ProjectPreview : React.FC<IProjectPreviewProps> = props => {
+    const activeClassName = props.active ? 'active' : '';
+
     return (
-        <Link className={`project-preview`} to={props.project.getLink()} style={{ backgroundImage: `url(${props.project.images[0].url})` }}>
+        <Link className={`project-preview ${activeClassName}`} to={props.project.getLink()} 
+            style={{ backgroundImage: `url(${props.project.images[0].url})`, transitionDelay: props.transitionDelay }}>
             <div className={`hover-shadow`}></div>
             <div className={`text flex-column`}>
                 <div className={`project-title uppercase`}>

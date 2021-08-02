@@ -11,6 +11,8 @@
     position: relative;
     cursor: pointer;
     margin-bottom: var(--size-margin-20);
+    opacity: 0;
+    transition: opacity .8s cubic-bezier(1,.07,1,.9);
     >.hover-shadow {
         position: absolute;
         top: calc(var(--size-margin-10) * (-1));
@@ -72,10 +74,16 @@
             }
         }
     }
+    &.active {
+        opacity: 1;
+    }
 }
 
 @media screen and (max-width: 600px) {
     .project-preview {
         width: 100%;
+        >.text {
+            width: calc(100vw - (2 * 60px));
+        }
     }
 }

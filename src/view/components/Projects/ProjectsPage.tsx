@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Page from '../Page/Page';
 import ProjectPreview from './ProjectPreview/ProjectPreview';
 import './ProjectsPage.scss';
@@ -28,6 +28,12 @@ const ProjectsPage : React.FC<IProjectsPageProps> = props => {
         }, 1000);
     }
 
+    const [ active, setActive ] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => setActive(true), 1000);
+    }, []);
+
     return (
         <Page className={`nos-projets-page`} title='Nos projets' setActiveCategory={props.setActiveCategory}>
             <div className={`nos-projets-filtres flex-row`}>
@@ -38,7 +44,7 @@ const ProjectsPage : React.FC<IProjectsPageProps> = props => {
                 <ProjectFilter category={ProjectCategory.EN_COURS}  active={isCat5Active} onClickCategory={onCategoryClick} />
             </div>
             <div className={`nos-projets-container flex-row ${isInvisibleClassname}`}>
-                {Project.filterByCategory(props.activeCategory).map(t => <ProjectPreview project={t} />)}
+                {Project.filterByCategory(props.activeCategory).map((t, i) => <ProjectPreview project={t} active={active} transitionDelay={`${i * 0.1}s`}/>)}
             </div>
         </Page>
     );

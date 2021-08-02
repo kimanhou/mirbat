@@ -9,7 +9,7 @@ const Contact : React.FC = props => {
     const activeClassName = active ? 'active' : '';
     
     return (
-        <FadeIn className={`home-contact ${activeClassName}`}>
+        <FadeIn className={`home-contact ${activeClassName}`} id='contact'>
             <ScreenDetector onActive={() => setActive(true)} onUnactive={() => setActive(false)} />
             <div className={`home-contact-background`}></div>
             <div className={`home-contact-content`}>

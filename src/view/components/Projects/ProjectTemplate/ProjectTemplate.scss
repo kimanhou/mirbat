@@ -35,6 +35,7 @@
                         background-repeat: no-repeat;
                         background-position-x: center;
                         background-position-y: center;
+                        background-attachment: fixed;
                         margin-bottom: var(--size-margin-60);
                         >.project-template-title-container-container {
                             position: absolute;
@@ -44,6 +45,7 @@
                             height: 80vh;
                             display: flex;
                             align-items: flex-end;
+                            pointer-events: none;
                             >.project-template-title-container {
                                 margin-bottom: var(--size-margin-20);
                                 display: inline-block;

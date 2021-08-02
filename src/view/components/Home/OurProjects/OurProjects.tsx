@@ -1,5 +1,4 @@
 import React from 'react';
-import Text from '../../../../model/Text';
 import FadeIn from '../../FadeIn/FadeIn';
 import LinkWithBackground from '../../Navigation/LinkWithBackground/LinkWithBackground';
 import NavigationLink from '../../Navigation/NavigationLink';
@@ -18,7 +17,7 @@ const OurProjects : React.FC<IOurProjectsProps> = props => {
     return (
         <FadeIn className={`home-nos-projets flex-row`}>
             <div className={`left`}>
-                <NavigationLink text={new Text('Nos projets', 'Nos projets')} to='/projets' isVisible={true} setIsVisible={() => {}} transitionDelay='0s' />
+                <NavigationLink text='Nos projets' to='/projets' isVisible={true} setIsVisible={() => {}} transitionDelay='0s' />
                     <div className={`nos-projets-text`}>
                         <span className={`highlighted-char`}>D</span>uis a tortor venenatis, pellentesque velit ut, convallis sem. 
                         Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
@@ -39,7 +38,7 @@ const OurProjects : React.FC<IOurProjectsProps> = props => {
                     </div>
             </div>
             <div className={`right flex-row`}>
-                {lastProjects.map(t => <ProjectPreview project={t} />)}
+                {lastProjects.map(t => <ProjectPreview project={t} active/>)}
             </div>
         </FadeIn>
     );

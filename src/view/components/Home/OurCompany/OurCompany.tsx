@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Text from '../../../../model/Text';
 import FadeIn from '../../FadeIn/FadeIn';
 import LinkWithBackground from '../../Navigation/LinkWithBackground/LinkWithBackground';
 import NavigationLink from '../../Navigation/NavigationLink';
@@ -30,7 +29,7 @@ const OurCompany : React.FC = props => {
                 </div>
             </div>
             <div className={`half right`}>
-                <NavigationLink text={new Text('Notre entreprise', 'Notre entreprise')} to='/entreprise' isVisible={true} setIsVisible={() => {}} transitionDelay='0s' />
+                <NavigationLink text='Notre entreprise' to='/entreprise' isVisible={true} setIsVisible={() => {}} transitionDelay='0s' />
                 <div className={`notre-entreprise-text`}>
                     <span className={`highlighted-char`}>L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Suspendisse egestas non dui quis tincidunt. 
