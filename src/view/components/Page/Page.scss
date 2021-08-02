@@ -8,6 +8,17 @@
             top: 0;
             left: 0;
         }
+        >.navigation {
+            top: calc(70px + var(--size-main-margin));
+            &.visible {
+                >a {
+                    left: 0;
+                }
+            }
+            >a {
+                left: calc((-1) * var(--size-margin-40));
+            }
+        }
         >.content {
             transform: translateX(0px);
             pointer-events: none;
@@ -76,7 +87,7 @@
                     }
                 }
                 &.nav-visible {
-                    left: 400px;
+                    left: 360px;
                     transition-delay: 0s;
                 }
             }
@@ -87,7 +98,7 @@
         top: -60px;
         right: 0;
         bottom: -20px;
-        left: 460px;
+        left: 420px;
         transition: background-color .4s 0 cubic-bezier(1,.07,1,.9);
         pointer-events: none;
         &.nav-visible {

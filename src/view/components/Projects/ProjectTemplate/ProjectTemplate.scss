@@ -7,6 +7,17 @@
             top: var(--size-margin-60);
             left: var(--size-margin-60);
         }
+        >.navigation {
+            top: calc(var(--size-margin-40) + 70px + var(--size-main-margin) + 20px);
+            &.visible {
+                >a {
+                    left: var(--size-margin-60);
+                }
+            }
+            >a {
+                left: calc((-1) * var(--size-margin-20));
+            }
+        }
         >.content {
             transform: translateX(0px);
             pointer-events: none;
@@ -155,7 +166,7 @@
                     }
                 }
                 &.nav-visible {
-                    left: 400px;
+                    left: 420px;
                     transition-delay: 0s;
                 }
             }
@@ -166,7 +177,7 @@
         top: -60px;
         right: 0;
         bottom: -20px;
-        left: 460px;
+        left: 420px;
         transition: background-color .4s 0 cubic-bezier(1,.07,1,.9);
         pointer-events: none;
         &.nav-visible {
