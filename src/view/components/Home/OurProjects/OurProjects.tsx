@@ -8,6 +8,7 @@ import Project, { ProjectCategory } from '../../../../model/Project';
 
 interface IOurProjectsProps {
     setActiveCategory : (activeCategory : ProjectCategory) => void;
+    launchPageTransition : () => void;
 }
 
 const OurProjects : React.FC<IOurProjectsProps> = props => {
@@ -17,7 +18,7 @@ const OurProjects : React.FC<IOurProjectsProps> = props => {
     return (
         <FadeIn className={`home-nos-projets flex-row`}>
             <div className={`left`}>
-                <NavigationLink text='Nos projets' to='/projets' isVisible={true} setIsVisible={() => {}} transitionDelay='0s' />
+                <NavigationLink text='Nos projets' to='/projets' isVisible={true} setIsVisible={() => {}} transitionDelay='0s' launchPageTransition={props.launchPageTransition} />
                     <div className={`nos-projets-text`}>
                         <span className={`highlighted-char`}>D</span>uis a tortor venenatis, pellentesque velit ut, convallis sem. 
                         Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
@@ -32,13 +33,13 @@ const OurProjects : React.FC<IOurProjectsProps> = props => {
                         Pellentesque tempus ut nibh eget ullamcorper.
                     </div>
                     <div className={`voir-projets-container flex-row`}>
-                        <LinkWithBackground className={`voir-projets`} to='/projets' onClick={() => props.setActiveCategory(ProjectCategory.TOUS)}>
+                        <LinkWithBackground className={`voir-projets`} to='/projets' setActiveCategoryToAll={() => props.setActiveCategory(ProjectCategory.TOUS)} launchPageTransition={props.launchPageTransition} >
                             Voir tous les projets
                         </LinkWithBackground>
                     </div>
             </div>
             <div className={`right flex-row`}>
-                {lastProjects.map(t => <ProjectPreview project={t} active/>)}
+                {lastProjects.map(t => <ProjectPreview project={t} active launchPageTransition={props.launchPageTransition} />)}
             </div>
         </FadeIn>
     );

@@ -10,6 +10,7 @@ interface IPageProps {
     className ?: string;
     title : string;
     setActiveCategory : (activeCategory : ProjectCategory) => void;
+    launchPageTransition : () => void;
 }
 
 const Page : React.FC<IPageProps> = props => {
@@ -24,11 +25,11 @@ const Page : React.FC<IPageProps> = props => {
     return (
         <div className={`page ${classNameClassName}`}>
             <div className={`page-wrapper`}>
-                <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} />
-                <Navigation isVisible={isNavVisible} setIsVisible={setIsNavVisible} setActiveCategory={props.setActiveCategory} />
+                <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} launchPageTransition={props.launchPageTransition} />
+                <Navigation isVisible={isNavVisible} setIsVisible={setIsNavVisible} setActiveCategory={props.setActiveCategory} launchPageTransition={props.launchPageTransition} />
                 <div className={`content`}>
                     <div className={`content-moving ${isNavVisibleClassName}`}>
-                        <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} />
+                        <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} launchPageTransition={props.launchPageTransition} />
                         <div className={`page-content`}>
                             <div className={`page-title ${setIsTitleActiveClassName}`}>
                                 <ScreenDetector className={`screen-detector-page-title`} onActive={() => setIsTitleActive(true)} onUnactive={() => setIsTitleActive(false)}/>
@@ -42,7 +43,7 @@ const Page : React.FC<IPageProps> = props => {
                             </div>
 
                             {props.children}
-                            <Footer />
+                            <Footer launchPageTransition={props.launchPageTransition} />
                         </div>
                     </div>
                 </div>

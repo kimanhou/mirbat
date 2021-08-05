@@ -16,6 +16,7 @@ import ProjectTemplateBackButton from './ProjectTemplateBackButton';
 
 interface IProjectTemplateProps {
     setActiveCategory : (activeCategory : ProjectCategory) => void;
+    launchPageTransition : () => void;
 }
 
 const ProjectTemplate : React.FC<IProjectTemplateProps> = props => {
@@ -56,11 +57,11 @@ const ProjectTemplate : React.FC<IProjectTemplateProps> = props => {
     return (
         <div className={`project-template`}>
             <div className={`project-template-wrapper`}>
-                <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} />
-                <Navigation isVisible={isNavVisible} setIsVisible={setIsNavVisible} setActiveCategory={props.setActiveCategory} />
+                <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} launchPageTransition={props.launchPageTransition} />
+                <Navigation isVisible={isNavVisible} setIsVisible={setIsNavVisible} setActiveCategory={props.setActiveCategory} launchPageTransition={props.launchPageTransition} />
                 <div className={`content`}>
                     <div className={`content-moving ${isNavVisibleClassName}`}>
-                        <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} iswhite />
+                        <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} iswhite launchPageTransition={props.launchPageTransition} />
                         <div className={`project-template-content`}>
                             <div className={`project-template-title`} style={{ backgroundImage: `url(${project.images[0].url})` }} >
                                 <div className={`project-template-title-container-container`}>
@@ -77,7 +78,7 @@ const ProjectTemplate : React.FC<IProjectTemplateProps> = props => {
                                 </div>
                             </div>
 
-                            <ProjectTemplateBackButton />
+                            <ProjectTemplateBackButton launchPageTransition={props.launchPageTransition}/>
                             <div className={`project-template-details flex-row`}>
                                 <div className={`project-template-description flex-1`}>
                                     <p>
@@ -116,7 +117,7 @@ const ProjectTemplate : React.FC<IProjectTemplateProps> = props => {
                             </div>
 
                             <div className={`project-template-footer-container`}>
-                                <Footer />
+                                <Footer  launchPageTransition={props.launchPageTransition}/>
                             </div>
                         </div>
                     </div>

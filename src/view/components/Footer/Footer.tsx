@@ -5,6 +5,7 @@ import ScreenDetector from '../ScreenDetector/screenDetector';
 import './Footer.scss';
 
 interface IFooterProps {
+    launchPageTransition : () => void;
 }
 
 const Footer : React.FC<IFooterProps> = props => {
@@ -16,7 +17,7 @@ const Footer : React.FC<IFooterProps> = props => {
             <ScreenDetector onActive={() => setActive(true)} onUnactive={() => setActive(false)} />
             <div className={`thick-underline`}></div>
             <div className={`name-container`}>
-                <Name isNavVisible={false} noMarginLeftMobile />
+                <Name isNavVisible={false} noMarginLeftMobile launchPageTransition={props.launchPageTransition} />
             </div>
             <div className={`footer-content flex-row`}>
                 <div className={`footer-copyright`}>

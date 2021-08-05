@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './Name.scss';
 
 interface INameProps {
     iswhite ?: boolean;
     isNavVisible : boolean;
+    launchPageTransition : () => void;
     noMarginLeftMobile ?: boolean;
 }
 
@@ -39,8 +40,15 @@ const Name : React.FC<INameProps> = props => {
         setTimeout(() => writeText(0), 1000);
     }, []);
 
+    const history = useHistory();
+    const onClick : React.MouseEventHandler<HTMLAnchorElement> = e => {
+        e.preventDefault();
+        setTimeout(() => history.push('/'), 1000);
+        props.launchPageTransition();
+    }
+
     return (
-        <Link className={`name ${isWhiteClassName} ${isTransparentClassName} ${noMarginLeftMobileClassName}`} to='/'>
+        <Link className={`name ${isWhiteClassName} ${isTransparentClassName} ${noMarginLeftMobileClassName}`} to='/' onClick={onClick}>
             {writtenText}
         </Link>
     );

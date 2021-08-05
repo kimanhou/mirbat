@@ -5,19 +5,27 @@ import ProjectSurface from './ProjectInfo/ProjectSurface';
 import ProjectDuration from './ProjectInfo/ProjectDuration';
 import ProjectLocation from './ProjectInfo/ProjectLocation';
 import Project from '../../../../model/Project';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 interface IProjectPreviewProps {
     project : Project;
     active : boolean;
+    launchPageTransition : () => void;
     transitionDelay ?: string;
 }
 
 const ProjectPreview : React.FC<IProjectPreviewProps> = props => {
     const activeClassName = props.active ? 'active' : '';
+    const history = useHistory();
 
+    const onClick : React.MouseEventHandler<HTMLAnchorElement> = e => {
+        e.preventDefault();
+        setTimeout(() => history.push(props.project.getLink()), 1000);
+        props.launchPageTransition();
+    }
+    
     return (
-        <Link className={`project-preview ${activeClassName}`} to={props.project.getLink()} 
+        <Link className={`project-preview ${activeClassName}`} to={props.project.getLink()} onClick={onClick}
             style={{ backgroundImage: `url(${props.project.images[0].url})`, transitionDelay: props.transitionDelay }}>
             <div className={`hover-shadow`}></div>
             <div className={`text flex-column`}>

@@ -11,6 +11,7 @@ import { ProjectCategory } from '../../../model/Project';
 
 interface ICompanyPageProps {
     setActiveCategory : (activeCategory : ProjectCategory) => void;
+    launchPageTransition : () => void;
 }
 
 const CompanyPage : React.FC<ICompanyPageProps> = props => {
@@ -21,7 +22,7 @@ const CompanyPage : React.FC<ICompanyPageProps> = props => {
     const isValuesActiveClassName = isValuesActive ? 'active' : '';
     
     return (
-        <Page className={`notre-entreprise-page`} title='Notre entreprise' setActiveCategory={props.setActiveCategory}>
+        <Page className={`notre-entreprise-page`} title='Notre entreprise' setActiveCategory={props.setActiveCategory} launchPageTransition={props.launchPageTransition}>
             <p><b>
                 Pellentesque euismod pulvinar lacus, id pulvinar elit gravida quis. 
                 Nulla semper tellus congue nulla semper faucibus. Aenean id nunc dolor.

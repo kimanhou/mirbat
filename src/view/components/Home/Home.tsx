@@ -10,6 +10,7 @@ import OurProjects from './OurProjects/OurProjects';
 
 interface IHomeProps {
     setActiveCategory : (activeCategory : ProjectCategory) => void;
+    launchPageTransition : () => void;
 }
 
 const Home : React.FC<IHomeProps> = props => {
@@ -31,20 +32,20 @@ const Home : React.FC<IHomeProps> = props => {
 
     return (
         <div className={`home`}>
-            <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} />
-            <Navigation isVisible={isNavVisible} setIsVisible={setIsNavVisible} setActiveCategory={props.setActiveCategory}/>
+            <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} launchPageTransition={props.launchPageTransition} />
+            <Navigation isVisible={isNavVisible} setIsVisible={setIsNavVisible} setActiveCategory={props.setActiveCategory} launchPageTransition={props.launchPageTransition}/>
             <div className={`home-content`}>
                 <div className={`home-content-moving ${isNavVisibleClassName}`}>
-                    <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} iswhite/>
+                    <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} iswhite launchPageTransition={props.launchPageTransition} />
                     <div className={`home-hero`} style={{ backgroundSize: backgroundSize }}></div>
                     <div className={`home-tag-line`}>
                         Lorem ipsum dolor sit amet, <br></br>consectetur adipiscing elit. 
                     </div>
                     <div className={`home-content-wrapper`}>
-                        <OurCompany />
-                        <OurProjects setActiveCategory={props.setActiveCategory}/>
+                        <OurCompany launchPageTransition={props.launchPageTransition} />
+                        <OurProjects setActiveCategory={props.setActiveCategory} launchPageTransition={props.launchPageTransition} />
                         <Contact />
-                        <Footer />
+                        <Footer launchPageTransition={props.launchPageTransition} />
                     </div>
                 </div>
             </div>

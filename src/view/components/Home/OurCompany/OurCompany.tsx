@@ -9,7 +9,11 @@ import entreprise1 from '../../../../images/home/entreprise-1.jpg';
 import entreprise2 from '../../../../images/home/entreprise-2.jpg';
 import entreprise3 from '../../../../images/home/entreprise-3.jpg';
 
-const OurCompany : React.FC = props => {
+interface IOurCompanyProps {
+    launchPageTransition : () => void;
+}
+
+const OurCompany : React.FC<IOurCompanyProps> = props => {
     const [active, setActive] = useState(false);
 
     return (
@@ -29,7 +33,7 @@ const OurCompany : React.FC = props => {
                 </div>
             </div>
             <div className={`half right`}>
-                <NavigationLink text='Notre entreprise' to='/entreprise' isVisible={true} setIsVisible={() => {}} transitionDelay='0s' />
+                <NavigationLink text='Notre entreprise' to='/entreprise' isVisible={true} setIsVisible={() => {}} transitionDelay='0s' launchPageTransition={props.launchPageTransition} />
                 <div className={`notre-entreprise-text`}>
                     <span className={`highlighted-char`}>L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Suspendisse egestas non dui quis tincidunt. 
@@ -40,7 +44,7 @@ const OurCompany : React.FC = props => {
                     Aliquam molestie faucibus augue vitae ullamcorper.
                 </div>
                 <div className={`en-savoir-plus-container flex-row`}>
-                    <LinkWithBackground className={`en-savoir-plus`} to='/entreprise'>
+                    <LinkWithBackground className={`en-savoir-plus`} to='/entreprise' launchPageTransition={props.launchPageTransition} >
                         En savoir plus
                     </LinkWithBackground>
                 </div>

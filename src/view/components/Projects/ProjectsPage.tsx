@@ -8,6 +8,7 @@ import Project, { ProjectCategory } from '../../../model/Project';
 interface IProjectsPageProps {
     activeCategory : ProjectCategory;
     setActiveCategory : (activeCategory : ProjectCategory) => void;
+    launchPageTransition : () => void;
 }
 
 const ProjectsPage : React.FC<IProjectsPageProps> = props => {
@@ -35,7 +36,7 @@ const ProjectsPage : React.FC<IProjectsPageProps> = props => {
     }, []);
 
     return (
-        <Page className={`nos-projets-page`} title='Nos projets' setActiveCategory={props.setActiveCategory}>
+        <Page className={`nos-projets-page`} title='Nos projets' setActiveCategory={props.setActiveCategory} launchPageTransition={props.launchPageTransition}>
             <div className={`nos-projets-filtres flex-row`}>
                 <ProjectFilter category={ProjectCategory.TOUS} active={isCat1Active} onClickCategory={onCategoryClick} />
                 <ProjectFilter category={ProjectCategory.LOGEMENTS} active={isCat2Active} onClickCategory={onCategoryClick} />
@@ -44,7 +45,7 @@ const ProjectsPage : React.FC<IProjectsPageProps> = props => {
                 <ProjectFilter category={ProjectCategory.EN_COURS}  active={isCat5Active} onClickCategory={onCategoryClick} />
             </div>
             <div className={`nos-projets-container flex-row ${isInvisibleClassname}`}>
-                {Project.filterByCategory(props.activeCategory).map((t, i) => <ProjectPreview project={t} active={active} transitionDelay={`${i * 0.1}s`}/>)}
+                {Project.filterByCategory(props.activeCategory).map((t, i) => <ProjectPreview project={t} active={active} launchPageTransition={props.launchPageTransition} transitionDelay={`${i * 0.1}s`}/>)}
             </div>
         </Page>
     );

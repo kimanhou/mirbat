@@ -6,6 +6,7 @@ import NavIcon from './NavIcon';
 interface IHeaderProps {
     isNavVisible : boolean;
     setIsNavVisible : (isNavVisible : boolean) => void;
+    launchPageTransition : () => void;
     iswhite ?: boolean;
 }
 
@@ -16,7 +17,7 @@ const Header : React.FC<IHeaderProps> = props => {
     return (
         <div className={`header flex-row ${isWhiteClassName} ${isTransparentClassName}`}>
             <NavIcon isNavVisible={props.isNavVisible} setIsNavVisible={props.setIsNavVisible} iswhite={props.iswhite}/>
-            <Name isNavVisible={props.isNavVisible} iswhite={props.iswhite} />
+            <Name isNavVisible={props.isNavVisible} iswhite={props.iswhite} launchPageTransition={props.launchPageTransition}/>
         </div>
     );
 }
