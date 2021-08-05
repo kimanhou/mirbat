@@ -14,6 +14,6 @@ export const useMediaQuery = (query : string) => {
     return matches;
 }
 
-export const isMobile = () => {
+export const useIsMobile = () => {
     return useMediaQuery("screen and (max-width: 600px)");
 }

@@ -18,17 +18,17 @@ const Navigation : React.FC<INavigationProps> = props => {
     return (
         <div className={`navigation ${visibleClassName}`}>
             <NavigationLink text={'Notre entreprise'} to='/entreprise' isVisible={props.isVisible} setIsVisible={props.setIsVisible} transitionDelay='0.8s' launchPageTransition={props.launchPageTransition} />
-            <NavigationSubLink text='Notre équipe' to='/entreprise#equipe' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
-            <NavigationSubLink text='Nos valeurs' to='/entreprise#valeurs' isVisible={props.isVisible} setIsVisible={props.setIsVisible} />
+            <NavigationSubLink text='Notre équipe' to='/entreprise' scrollToAnchor={'equipe'} isVisible={props.isVisible} setIsVisible={props.setIsVisible} launchPageTransition={props.launchPageTransition} />
+            <NavigationSubLink text='Nos valeurs' to='/entreprise' scrollToAnchor={'valeurs'}  isVisible={props.isVisible} setIsVisible={props.setIsVisible} launchPageTransition={props.launchPageTransition} />
 
             <div className={`spacing`}></div>
 
             <NavigationLink text={'Nos projets'} to='/projets'  isVisible={props.isVisible} setIsVisible={props.setIsVisible} transitionDelay='1s' launchPageTransition={props.launchPageTransition} />
-            {projectCategories.map(t => <NavigationSubLink text={t} to='/projets' isVisible={props.isVisible} setIsVisible={props.setIsVisible} activeCategory={t} setActiveCategory={props.setActiveCategory} />)}
+            {projectCategories.map(t => <NavigationSubLink text={t} to='/projets' isVisible={props.isVisible} setIsVisible={props.setIsVisible} activeCategory={t} setActiveCategory={props.setActiveCategory} launchPageTransition={props.launchPageTransition} />)}
 
             <div className={`spacing`}></div>
 
-            <NavigationLink text={'Nous contacter'} to='/#contact' isVisible={props.isVisible} setIsVisible={props.setIsVisible} transitionDelay='1.2s' launchPageTransition={props.launchPageTransition} />
+            <NavigationLink text={'Nous contacter'} to='/' scrollToAnchor={'contact'} isVisible={props.isVisible} setIsVisible={props.setIsVisible} transitionDelay='1.2s' launchPageTransition={props.launchPageTransition} />
         </div>
     );
 }

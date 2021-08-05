@@ -93,8 +93,8 @@ export default class Project {
             [
                 ProjectCategory.TOUS,
                 ProjectCategory.LOGEMENTS,
-                ProjectCategory.EQUIPEMENTS,
                 ProjectCategory.BUREAUX,
+                ProjectCategory.EQUIPEMENTS,
                 ProjectCategory.EN_COURS
             ]
         );

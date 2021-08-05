@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router';
 import { HashLink } from 'react-router-hash-link';
+import { scrollToAnchor } from '../../componentUtil';
 import './NavigationLink.scss';
 
 interface INavigationLinkProps {
@@ -10,6 +11,7 @@ interface INavigationLinkProps {
     setIsVisible : (isVisible : boolean) => void;
     launchPageTransition : () => void;
     transitionDelay ?: string;
+    scrollToAnchor ?: string;
 }
 
 const NavigationLink : React.FC<INavigationLinkProps> = props => {
@@ -23,7 +25,13 @@ const NavigationLink : React.FC<INavigationLinkProps> = props => {
         e.preventDefault();
         setTimeout(() => history.push(props.to), 1000);
         props.setIsVisible(false);
-        props.launchPageTransition();
+        if (props.to !== window.location.pathname) {
+            props.launchPageTransition();
+        }
+        if (props.scrollToAnchor !== undefined && props.scrollToAnchor !== '') {
+            const temp = props.scrollToAnchor;
+            setTimeout(() => scrollToAnchor(temp), 1200);
+        }
     }
 
     return (

@@ -44,7 +44,12 @@ const Name : React.FC<INameProps> = props => {
     const onClick : React.MouseEventHandler<HTMLAnchorElement> = e => {
         e.preventDefault();
         setTimeout(() => history.push('/'), 1000);
-        props.launchPageTransition();
+        if (window.location.pathname !== '/') {
+            props.launchPageTransition();
+        }
+        else {
+            window.scrollTo({top : 0});
+        }
     }
 
     return (

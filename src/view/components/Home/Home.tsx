@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ProjectCategory } from '../../../model/Project';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
@@ -19,16 +19,42 @@ const Home : React.FC<IHomeProps> = props => {
 
     const [ backgroundSize, setBackgroundSize ] = useState('120%');
 
-    useEffect(() => {
-        const onScroll = () => {
-            const scrollMax = 20 + 0.5 * document.documentElement.clientHeight;
+    const heroRef = useRef<HTMLDivElement>(null);
+
+    const vertical = () => {
+        if (heroRef.current != null) {
+            const width = heroRef.current.getBoundingClientRect().width;
+            const height = heroRef.current.getBoundingClientRect().height;
+            const heroImageRatio = 1205 / 957;
+            if ((height / width) > heroImageRatio) {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    const calculateBackgroundSize = () => {
+        const scrollMax = 20 + 0.5 * document.documentElement.clientHeight;
             const backgroundSize = - (window.scrollY) / scrollMax * 20 + 120;
             const limitedBackgroundSize = Math.max(Math.min(backgroundSize, 120), 100);
-            setBackgroundSize(`${limitedBackgroundSize}%`);
-        };
-        window.addEventListener('scroll', onScroll);
-        return () => window.removeEventListener('scroll', onScroll);
-    }, [ ]);
+            if (vertical()) {
+                setBackgroundSize(`auto ${limitedBackgroundSize}%`);
+            }
+            else {
+                setBackgroundSize(`${limitedBackgroundSize}%`);
+            }
+    }
+
+    useEffect(() => {
+        const temp = calculateBackgroundSize;
+        window.addEventListener('scroll', temp);
+        return () => window.removeEventListener('scroll', temp);
+    }, [ vertical() ]);
+
+    useEffect(() => {
+        calculateBackgroundSize();
+    }, [ vertical() ]);
 
     return (
         <div className={`home`}>
@@ -37,7 +63,9 @@ const Home : React.FC<IHomeProps> = props => {
             <div className={`home-content`}>
                 <div className={`home-content-moving ${isNavVisibleClassName}`}>
                     <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} iswhite launchPageTransition={props.launchPageTransition} />
-                    <div className={`home-hero`} style={{ backgroundSize: backgroundSize }}></div>
+                    <div className={`home-hero`} ref={heroRef}
+                        style={{ backgroundSize: backgroundSize }}
+                    ></div>
                     <div className={`home-tag-line`}>
                         Lorem ipsum dolor sit amet, <br></br>consectetur adipiscing elit. 
                     </div>
