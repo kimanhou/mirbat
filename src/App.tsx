@@ -4,6 +4,7 @@ import './App.scss';
 import { ProjectCategory } from './model/Project';
 import CompanyPage from './view/components/CompanyPage/CompanyPage';
 import Home from './view/components/Home/Home';
+import Intro from './view/components/Home/Intro/Intro';
 import ProjectsPage from './view/components/Projects/ProjectsPage';
 import ProjectTemplate from './view/components/Projects/ProjectTemplate/ProjectTemplate';
 import ScrollToTop from './view/components/ScrollToTop/ScrollToTop';
@@ -22,6 +23,8 @@ const App : React.FunctionComponent = props => {
             setTransitionClassName('');
         }, 2000);
     }
+    
+    const [ introVisible, setIntroVisible ] = useState(true);
     
     return (
         <div className={`App`}>
@@ -49,6 +52,7 @@ const App : React.FunctionComponent = props => {
                 MirBat.
             </div>
         </div>
+        <Intro visible={introVisible} setVisible={setIntroVisible} />
         </div>
   )
 }

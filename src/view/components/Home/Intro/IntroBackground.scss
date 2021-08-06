@@ -1,0 +1,24 @@
+.intro-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    >.upper, >.lower {
+        transition: y .8s cubic-bezier(1,.07,1,.9);
+    }
+    >.upper {
+        y: -50%;
+    }
+    >.lower {
+        y: 100%;
+    }
+    &.visible {
+        >.upper {
+            y: 0;
+        }
+        >.lower {
+            y: 50%;
+        }
+    }
+}
