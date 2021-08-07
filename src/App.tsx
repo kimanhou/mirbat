@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import './App.scss';
 import { ProjectCategory } from './model/Project';
 import CompanyPage from './view/components/CompanyPage/CompanyPage';
@@ -28,7 +28,7 @@ const App : React.FunctionComponent = props => {
     
     return (
         <div className={`App`}>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter>
             <ScrollToTop />
             <Switch>
                 <Route exact path={["/entreprise"]}>
@@ -44,7 +44,7 @@ const App : React.FunctionComponent = props => {
                     <ProjectTemplate setActiveCategory={setActiveCategory} launchPageTransition={launchTransition} />
                 </Route>
             </Switch>
-        </BrowserRouter>
+        </HashRouter>
         <div className={`transition-layer ${transitionClassName}`}>
             <div className={`transition-layer-color black`}></div>
             <div className={`transition-layer-color white`}></div>
