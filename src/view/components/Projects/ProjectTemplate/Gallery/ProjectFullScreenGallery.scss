@@ -1,0 +1,36 @@
+.project-full-screen-gallery {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .8s cubic-bezier(1,.07,1,.9);
+    padding-left: var(--size-margin-60);
+    &.visible {
+        opacity: 1;
+        visibility: initial;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.7);    
+    }
+    >.close-button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 6vh;
+        transition: transform .2s ease-in;
+        color: var(--color-white);
+        float: right;
+        margin-right: var(--size-margin-60);
+        margin-top: 2vh;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    >.project-full-screen-gallery-images {
+        height: 80vh;
+        margin: 10vh 0 2vh;
+        transition: transform .4s cubic-bezier(1,.07,1,.9);
+    }
+}

@@ -6,6 +6,9 @@
             position: absolute;
             top: var(--size-margin-60);
             left: var(--size-margin-60);
+            &.absolute{
+                z-index: 1;
+            }
         }
         >.navigation {
             top: calc(var(--size-margin-40) + 70px + var(--size-main-margin) + 20px);
@@ -19,7 +22,6 @@
             }
         }
         >.content {
-            transform: translateX(0px);
             pointer-events: none;
             >.content-moving {
                 position: relative;
@@ -28,11 +30,6 @@
                 left: 0px;
                 pointer-events: auto;
                 background-color: var(--color-white);
-                >.header {
-                    position: fixed;
-                    top: var(--size-margin-60);
-                    left: var(--size-margin-60);
-                }
                 >.project-template-content {
                     >.project-template-title {
                         height: 80vh;
@@ -51,8 +48,8 @@
                         >.project-template-title-container-container {
                             position: absolute;
                             top: 0;
-                            left: 30px;
-                            right: 30px;
+                            left: var(--size-margin-60);
+                            right: var(--size-margin-60);
                             height: 80vh;
                             display: flex;
                             align-items: flex-end;
@@ -138,26 +135,6 @@
                             height: 300px;
                             margin-bottom: var(--size-margin-20);
                             transition: transform .4s cubic-bezier(1,.07,1,.9);
-                        }
-                        >.project-template-gallery-arrows {
-                            >img {
-                                width: 40px;
-                                cursor: pointer;
-                                transition: transform .2s ease-in, opacity .4s cubic-bezier(1,.07,1,.9);
-                                &:hover {
-                                    transform: scale(1.1);
-                                }
-                                &.greyed-out {
-                                    opacity: 0.4;
-                                    cursor: initial;
-                                    &:hover {
-                                        transform: unset;
-                                    }
-                                }
-                            }
-                            >:first-child {
-                                margin-right: var(--size-margin-10);
-                            }
                         }
                     }
 

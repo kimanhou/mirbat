@@ -1,0 +1,26 @@
+.project-template-gallery-arrows {
+    >img {
+        width: 40px;
+        cursor: pointer;
+        transition: transform .2s ease-in, opacity .4s cubic-bezier(1,.07,1,.9);
+        &:hover {
+            transform: scale(1.1);
+        }
+        &.greyed-out {
+            opacity: 0.4;
+            cursor: initial;
+            &:hover {
+                transform: unset;
+            }
+        }
+    }
+    >:first-child {
+        margin-right: var(--size-margin-10);
+    }
+    &.gallery-full-screen {
+        >img {
+            width: unset;
+            height: 6vh;
+        }
+    }
+}

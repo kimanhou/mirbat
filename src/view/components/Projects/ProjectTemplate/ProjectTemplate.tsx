@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
-import arrowPrevious from '../../../../images/projects/arrow-left.png';
-import arrowNext from '../../../../images/projects/arrow-right.png';
 import Project, { ProjectCategory } from '../../../../model/Project';
 import FitText from '../../FitText/FitText';
 import Footer from '../../Footer/Footer';
@@ -10,7 +8,9 @@ import Navigation from '../../Navigation/Navigation';
 import ProjectDuration from '../ProjectPreview/ProjectInfo/ProjectDuration';
 import ProjectLocation from '../ProjectPreview/ProjectInfo/ProjectLocation';
 import ProjectSurface from '../ProjectPreview/ProjectInfo/ProjectSurface';
-import ProjectImage from './ProjectImage';
+import ProjectFullScreenGallery from './Gallery/ProjectFullScreenGallery';
+import ProjectImage from './Gallery/ProjectImage';
+import ProjectTemplateGalleryArrows from './Gallery/ProjectTemplateGalleryArrows';
 import './ProjectTemplate.scss';
 import ProjectTemplateBackButton from './ProjectTemplateBackButton';
 
@@ -38,30 +38,19 @@ const ProjectTemplate : React.FC<IProjectTemplateProps> = props => {
     }
 
     const [ currentImageIndex, setCurrentImageIndex ] = useState(0);
-    const onClickPrevious = () => {
-        if (currentImageIndex !== 0) {
-            setCurrentImageIndex(t => t - 1);
-        }
-    }
-
-    const onClickNext = () => {
-        if (currentImageIndex !== project.images.length - 1) {
-            setCurrentImageIndex(t => t + 1);
-        }
-    }
 
     const offset = imageWidths.slice(0, currentImageIndex).reduce((a,b) => a+b+20, 0);
-    const previousGreyedOutClassName = currentImageIndex === 0 ? 'greyed-out' : '';
-    const nextGreyedOutClassName = currentImageIndex === project.images.length - 1 ? 'greyed-out' : '';
+
+    const [ fullScreenGalleryVisibile, setFullScreenGalleryVisibile ] = useState(false);
 
     return (
         <div className={`project-template`}>
             <div className={`project-template-wrapper`}>
                 <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} launchPageTransition={props.launchPageTransition} />
                 <Navigation isVisible={isNavVisible} setIsVisible={setIsNavVisible} setActiveCategory={props.setActiveCategory} launchPageTransition={props.launchPageTransition} />
+                <Header className={`absolute`} isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} iswhite launchPageTransition={props.launchPageTransition} />
                 <div className={`content`}>
                     <div className={`content-moving ${isNavVisibleClassName}`}>
-                        <Header isNavVisible={isNavVisible} setIsNavVisible={setIsNavVisible} iswhite launchPageTransition={props.launchPageTransition} />
                         <div className={`project-template-content`}>
                             <div className={`project-template-title`} style={{ backgroundImage: `url(${project.images[0].url})` }} >
                                 <div className={`project-template-title-container-container`}>
@@ -105,20 +94,21 @@ const ProjectTemplate : React.FC<IProjectTemplateProps> = props => {
                             </div>
 
                             <div className={`project-template-gallery`}>
-                                <div className={`project-template-gallery-images flex-row`} style={{
-                                    transform : `translateX(-${offset}px)`
-                                }}>
-                                    {project.images.map((t, i) => <ProjectImage url={t.url} caption={t.caption} setImageWidth={updateImageWidth(i)} />)}
+                                <div className={`project-template-gallery-images flex-row`} style={{ transform : `translateX(-${offset}px)` }}>
+                                    {project.images.map((t, i) => <ProjectImage url={t.url} caption={t.caption} 
+                                        setImageWidth={updateImageWidth(i)} 
+                                        currentImageIndex={i} setCurrentImageIndex={setCurrentImageIndex}
+                                        setFullScreenGalleryVisible={setFullScreenGalleryVisibile} />)}
                                 </div>
-                                <div className={`project-template-gallery-arrows`}>
-                                    <img src={arrowPrevious} alt='arrow previous' onClick={onClickPrevious} className={`${previousGreyedOutClassName}`} />
-                                    <img src={arrowNext} alt='arrow next' onClick={onClickNext} className={`${nextGreyedOutClassName}`} />
-                                </div>
+                                <ProjectTemplateGalleryArrows currentImageIndex={currentImageIndex} setCurrentImageIndex={setCurrentImageIndex} maxIndex={project.images.length - 1} />
                             </div>
 
                             <div className={`project-template-footer-container`}>
                                 <Footer  launchPageTransition={props.launchPageTransition}/>
                             </div>
+
+                            <ProjectFullScreenGallery visible={fullScreenGalleryVisibile} setVisible={setFullScreenGalleryVisibile}
+                                images={project.images} currentImageIndex={currentImageIndex} setCurrentImageIndex={setCurrentImageIndex} />
                         </div>
                     </div>
                 </div>
