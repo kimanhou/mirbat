@@ -1,7 +1,7 @@
 {
   "name": "contacts",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "https://kimanhou.github.io/mirbat/",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.14.6",

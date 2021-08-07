@@ -28,7 +28,7 @@ const App : React.FunctionComponent = props => {
     
     return (
         <div className={`App`}>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <ScrollToTop />
             <Switch>
                 <Route exact path={["/entreprise"]}>
