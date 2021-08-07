@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/mirbat/static/css/main.6b017a5c.chunk.css",
-    "main.js": "/mirbat/static/js/main.2c946468.chunk.js",
-    "main.js.map": "/mirbat/static/js/main.2c946468.chunk.js.map",
+    "main.css": "/mirbat/static/css/main.9d97e249.chunk.css",
+    "main.js": "/mirbat/static/js/main.94386e26.chunk.js",
+    "main.js.map": "/mirbat/static/js/main.94386e26.chunk.js.map",
     "runtime-main.js": "/mirbat/static/js/runtime-main.080d7d54.js",
     "runtime-main.js.map": "/mirbat/static/js/runtime-main.080d7d54.js.map",
-    "static/js/2.5515537a.chunk.js": "/mirbat/static/js/2.5515537a.chunk.js",
-    "static/js/2.5515537a.chunk.js.map": "/mirbat/static/js/2.5515537a.chunk.js.map",
+    "static/js/2.5e7e6f62.chunk.js": "/mirbat/static/js/2.5e7e6f62.chunk.js",
+    "static/js/2.5e7e6f62.chunk.js.map": "/mirbat/static/js/2.5e7e6f62.chunk.js.map",
     "index.html": "/mirbat/index.html",
-    "static/css/main.6b017a5c.chunk.css.map": "/mirbat/static/css/main.6b017a5c.chunk.css.map",
-    "static/js/2.5515537a.chunk.js.LICENSE.txt": "/mirbat/static/js/2.5515537a.chunk.js.LICENSE.txt",
+    "static/css/main.9d97e249.chunk.css.map": "/mirbat/static/css/main.9d97e249.chunk.css.map",
+    "static/js/2.5e7e6f62.chunk.js.LICENSE.txt": "/mirbat/static/js/2.5e7e6f62.chunk.js.LICENSE.txt",
     "static/media/0.996ae573.jpg": "/mirbat/static/media/0.996ae573.jpg",
     "static/media/0.f4bd4bc8.jpg": "/mirbat/static/media/0.f4bd4bc8.jpg",
     "static/media/1.4736c4c5.jpg": "/mirbat/static/media/1.4736c4c5.jpg",
@@ -41,6 +41,7 @@
     "static/media/8.9a86b938.jpg": "/mirbat/static/media/8.9a86b938.jpg",
     "static/media/9.9e8805f8.jpg": "/mirbat/static/media/9.9e8805f8.jpg",
     "static/media/App.scss": "/mirbat/static/media/DawningofaNewDay-Regular.d38bc0df.woff",
+    "static/media/arrow-left-white.035bd610.png": "/mirbat/static/media/arrow-left-white.035bd610.png",
     "static/media/company-1.f9f605aa.jpg": "/mirbat/static/media/company-1.f9f605aa.jpg",
     "static/media/company-2.f420763f.jpg": "/mirbat/static/media/company-2.f420763f.jpg",
     "static/media/Contact.scss": "/mirbat/static/media/contact.cbf5902d.jpg",
@@ -60,8 +61,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.080d7d54.js",
-    "static/js/2.5515537a.chunk.js",
-    "static/css/main.6b017a5c.chunk.css",
-    "static/js/main.2c946468.chunk.js"
+    "static/js/2.5e7e6f62.chunk.js",
+    "static/css/main.9d97e249.chunk.css",
+    "static/js/main.94386e26.chunk.js"
   ]
 }
