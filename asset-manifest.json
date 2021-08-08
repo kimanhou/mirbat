@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/mirbat/static/css/main.9d97e249.chunk.css",
+    "main.css": "/mirbat/static/css/main.c936dc2a.chunk.css",
     "main.js": "/mirbat/static/js/main.94386e26.chunk.js",
     "main.js.map": "/mirbat/static/js/main.94386e26.chunk.js.map",
     "runtime-main.js": "/mirbat/static/js/runtime-main.080d7d54.js",
@@ -8,7 +8,7 @@
     "static/js/2.5e7e6f62.chunk.js": "/mirbat/static/js/2.5e7e6f62.chunk.js",
     "static/js/2.5e7e6f62.chunk.js.map": "/mirbat/static/js/2.5e7e6f62.chunk.js.map",
     "index.html": "/mirbat/index.html",
-    "static/css/main.9d97e249.chunk.css.map": "/mirbat/static/css/main.9d97e249.chunk.css.map",
+    "static/css/main.c936dc2a.chunk.css.map": "/mirbat/static/css/main.c936dc2a.chunk.css.map",
     "static/js/2.5e7e6f62.chunk.js.LICENSE.txt": "/mirbat/static/js/2.5e7e6f62.chunk.js.LICENSE.txt",
     "static/media/0.996ae573.jpg": "/mirbat/static/media/0.996ae573.jpg",
     "static/media/0.f4bd4bc8.jpg": "/mirbat/static/media/0.f4bd4bc8.jpg",
@@ -62,7 +62,7 @@
   "entrypoints": [
     "static/js/runtime-main.080d7d54.js",
     "static/js/2.5e7e6f62.chunk.js",
-    "static/css/main.9d97e249.chunk.css",
+    "static/css/main.c936dc2a.chunk.css",
     "static/js/main.94386e26.chunk.js"
   ]
 }
