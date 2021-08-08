@@ -57,6 +57,11 @@
             top: var(--size-margin-10);
             left: var(--size-margin-10);
         }
+        >.navigation {
+            >a {
+                width: calc(100vw - (2 * var(--size-margin-30)));
+            }
+        }
         >.home-content {
             >.home-content-moving {
                 >.header {

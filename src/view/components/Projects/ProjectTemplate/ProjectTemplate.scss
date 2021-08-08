@@ -167,10 +167,23 @@
 @media screen and (max-width: 600px) {
     .project-template {
         >.project-template-wrapper {
+            padding-bottom: 20px;
             >.header {
                 top: var(--size-margin-30);
                 left: var(--size-margin-30);
             }
+            >.navigation {
+                top: calc(70px + var(--size-main-margin));
+                &.visible {
+                    >a {
+                        left: var(--size-margin-30);
+                    }
+                }
+                >a {
+                    width: calc(100vw - (2 * var(--size-margin-30)));
+                }
+            }
+               
             >.content {
                 >.content-moving {
                     >.header {
@@ -180,9 +193,11 @@
                     }
                     >.project-template-content {
                         >.project-template-title {
-                            padding-left: var(--size-margin-30);
+                            padding-left: 0;
                             margin-bottom: var(--size-margin-60);
                             >.project-template-title-container-container {
+                                left: var(--size-margin-30);
+                                right: var(--size-margin-30);
                                 >.project-template-title-container {
                                     margin-bottom: var(--size-margin-10);
                                     font-size: 1.4rem;
@@ -203,6 +218,11 @@
                                 }
                             }
                         }
+
+                        >.project-template-back-button {
+                            margin-left: var(--size-margin-30);
+                        }
+
                         >.project-template-details {
                             padding: var(--size-margin-30);
                             flex-direction: column;

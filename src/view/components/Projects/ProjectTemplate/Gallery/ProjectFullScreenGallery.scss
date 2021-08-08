@@ -34,3 +34,12 @@
         transition: transform .4s cubic-bezier(1,.07,1,.9);
     }
 }
+
+@media screen and (max-width: 600px) {
+    .project-full-screen-gallery {
+        padding-left: var(--size-margin-30);
+        >.close-button {
+            margin-right: var(--size-margin-30);
+        }
+    }
+}

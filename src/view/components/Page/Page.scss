@@ -111,7 +111,10 @@
 @media screen and (max-width: 600px) {
     .page {
         >.page-wrapper {
-            margin: var(--size-margin-60) var(--size-margin-30) var(--size-margin-20);
+            margin: var(--size-margin-30) var(--size-margin-30) var(--size-margin-20);
+            >.navigation {
+                top: calc(40px + var(--size-main-margin));
+            }
             >.content { 
                 >.content-moving {
                     >.page-content {
