@@ -23,14 +23,14 @@
         color: var(--color-white);
         float: right;
         margin-right: var(--size-margin-60);
-        margin-top: 2vh;
+        margin-top: 1vh;
         &:hover {
             transform: scale(1.1);
         }
     }
     >.project-full-screen-gallery-images {
-        height: 80vh;
-        margin: 10vh 0 2vh;
+        height: 76vh;
+        margin: 8vh 0 2vh;
         transition: transform .4s cubic-bezier(1,.07,1,.9);
     }
 }
