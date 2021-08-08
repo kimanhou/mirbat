@@ -1,0 +1,22 @@
+.nos-projets-container {
+    margin-bottom: var(--size-main-margin);
+    flex-wrap: wrap;
+    transition: opacity 1s;
+    >* {
+        margin-right: var(--size-margin-20);
+    }
+    >:nth-child(5n) {
+        margin-right: 0;
+    }
+    &.is-invisible {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nos-projets-container {
+        >* {
+            margin-right: 0;
+        }
+    }
+}

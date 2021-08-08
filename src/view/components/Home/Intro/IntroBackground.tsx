@@ -26,11 +26,11 @@ const IntroBackground : React.FC<IIntroBackgroundProps> = props => {
             <defs>
                 <mask id="mask-1" x="0" y="0" width="100%" height="100%">
                     <rect x="0" y="0" width="100%" height="100%" fill="white" />
-                    <text x="50%" y="50%" font-size="30vw" text-anchor="middle" dominant-baseline="middle" fill="black">MirBat.</text>
+                    <text x="50%" y="50%" fontSize="30vw" textAnchor="middle" dominantBaseline="middle" fill="black">MirBat.</text>
                 </mask>
                 <mask id="mask-2" x="0" y="0" width="100%" height="100%">
                     <rect x="0" y="0" width="100%" height="100%" fill="white" />
-                    <text x="50%" y="50%" font-size="30vw" text-anchor="middle" dominant-baseline="middle" fill="black">MirBat.</text>
+                    <text x="50%" y="50%" fontSize="30vw" textAnchor="middle" dominantBaseline="middle" fill="black">MirBat.</text>
                 </mask>
             </defs>
             <rect x="0" y="0"  width="100%" height="50%" mask="url(#mask-1)" fill="white" className={`upper`}></rect>

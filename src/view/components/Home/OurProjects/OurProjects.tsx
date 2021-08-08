@@ -9,11 +9,11 @@ import Project, { ProjectCategory } from '../../../../model/Project';
 interface IOurProjectsProps {
     setActiveCategory : (activeCategory : ProjectCategory) => void;
     launchPageTransition : () => void;
+    projects : Project[];
 }
 
 const OurProjects : React.FC<IOurProjectsProps> = props => {
-    const projects = Project.getAllProjects();
-    const lastProjects = projects.slice(0, 3);
+    const lastProjects = props.projects.sort((a, b) => b.date.getTime() - a.date.getTime()).slice(0, 3);
 
     return (
         <FadeIn className={`home-nos-projets flex-row`}>

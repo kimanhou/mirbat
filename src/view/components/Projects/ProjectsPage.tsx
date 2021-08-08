@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import Page from '../Page/Page';
-import ProjectPreview from './ProjectPreview/ProjectPreview';
-import './ProjectsPage.scss';
-import ProjectFilter from './ProjectFilter/ProjectFilter';
 import Project, { ProjectCategory } from '../../../model/Project';
+import Page from '../Page/Page';
+import ProjectFilter from './ProjectFilter/ProjectFilter';
+import ProjectsContainer from './ProjectsContainer';
+import './ProjectsPage.scss';
 
 interface IProjectsPageProps {
     activeCategory : ProjectCategory;
     setActiveCategory : (activeCategory : ProjectCategory) => void;
     launchPageTransition : () => void;
+    projects : Project[];
 }
 
 const ProjectsPage : React.FC<IProjectsPageProps> = props => {
@@ -19,7 +20,6 @@ const ProjectsPage : React.FC<IProjectsPageProps> = props => {
     const isCat5Active = props.activeCategory === ProjectCategory.EN_COURS;
 
     const [isInvisible, setIsInvisible] = useState(false);
-    const isInvisibleClassname = isInvisible ? 'is-invisible' : '';
 
     const onCategoryClick = (category : ProjectCategory) => {
         setIsInvisible(true);
@@ -44,9 +44,8 @@ const ProjectsPage : React.FC<IProjectsPageProps> = props => {
                 <ProjectFilter category={ProjectCategory.EQUIPEMENTS}  active={isCat4Active} onClickCategory={onCategoryClick} />
                 <ProjectFilter category={ProjectCategory.EN_COURS}  active={isCat5Active} onClickCategory={onCategoryClick} />
             </div>
-            <div className={`nos-projets-container flex-row ${isInvisibleClassname}`}>
-                {Project.filterByCategory(props.activeCategory).map((t, i) => <ProjectPreview project={t} active={active} launchPageTransition={props.launchPageTransition} transitionDelay={`${i * 0.1}s`}/>)}
-            </div>
+            <ProjectsContainer launchPageTransition={props.launchPageTransition} activeCategory={props.activeCategory} 
+                isInvisible={isInvisible} active={active} projects={props.projects} />
         </Page>
     );
 }

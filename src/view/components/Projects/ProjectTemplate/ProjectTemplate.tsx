@@ -17,13 +17,13 @@ import ProjectTemplateBackButton from './ProjectTemplateBackButton';
 interface IProjectTemplateProps {
     setActiveCategory : (activeCategory : ProjectCategory) => void;
     launchPageTransition : () => void;
+    projects : Project[];
 }
 
 const ProjectTemplate : React.FC<IProjectTemplateProps> = props => {
     let { projectId } = useParams<{projectId ?: string}>();
-    const allProjects = Project.getAllSortedProjects();
-    var foundProject = allProjects.find(t => t.id.toString() === projectId);
-    const project = foundProject === undefined ? allProjects[0] : foundProject;
+    var foundProject = props.projects.find(t => t.id.toString() === projectId);
+    const project = foundProject === undefined ? props.projects[0] : foundProject;
     
     const [ isNavVisible, setIsNavVisible ] = useState(false);
     const isNavVisibleClassName = isNavVisible ? 'nav-visible' : '';

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import './App.scss';
-import { ProjectCategory } from './model/Project';
+import ProjectController from './business/controller/ProjectController';
+import Project, { ProjectCategory } from './model/Project';
 import CompanyPage from './view/components/CompanyPage/CompanyPage';
 import Home from './view/components/Home/Home';
 import Intro from './view/components/Home/Intro/Intro';
@@ -25,6 +26,11 @@ const App : React.FunctionComponent = props => {
     }
     
     const [ introVisible, setIntroVisible ] = useState(true);
+
+    const [ projects, setProjects ] = useState<Project[]>([]);
+    useEffect(() => {
+        ProjectController.get().then(setProjects);
+    }, []);
     
     return (
         <div className={`App`}>
@@ -35,13 +41,13 @@ const App : React.FunctionComponent = props => {
                     <CompanyPage setActiveCategory={setActiveCategory} launchPageTransition={launchTransition} />
                 </Route>
                 <Route exact path={["/projets"]}>
-                    <ProjectsPage activeCategory={activeCategory} setActiveCategory={setActiveCategory} launchPageTransition={launchTransition} />
+                    <ProjectsPage activeCategory={activeCategory} setActiveCategory={setActiveCategory} launchPageTransition={launchTransition} projects={projects} />
                 </Route>
                 <Route exact path={["/"]}>
-                    <Home setActiveCategory={setActiveCategory} launchPageTransition={launchTransition}/>
+                    <Home setActiveCategory={setActiveCategory} launchPageTransition={launchTransition} projects={projects} />
                 </Route>
                 <Route path={["/projets/:projectId"]}>
-                    <ProjectTemplate setActiveCategory={setActiveCategory} launchPageTransition={launchTransition} />
+                    <ProjectTemplate setActiveCategory={setActiveCategory} launchPageTransition={launchTransition} projects={projects} />
                 </Route>
             </Switch>
         </HashRouter>

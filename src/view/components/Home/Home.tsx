@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ProjectCategory } from '../../../model/Project';
+import Project, { ProjectCategory } from '../../../model/Project';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Navigation from '../Navigation/Navigation';
@@ -11,6 +11,7 @@ import OurProjects from './OurProjects/OurProjects';
 interface IHomeProps {
     setActiveCategory : (activeCategory : ProjectCategory) => void;
     launchPageTransition : () => void;
+    projects : Project[];
 }
 
 const Home : React.FC<IHomeProps> = props => {
@@ -71,7 +72,7 @@ const Home : React.FC<IHomeProps> = props => {
                     </div>
                     <div className={`home-content-wrapper`}>
                         <OurCompany launchPageTransition={props.launchPageTransition} />
-                        <OurProjects setActiveCategory={props.setActiveCategory} launchPageTransition={props.launchPageTransition} />
+                        <OurProjects setActiveCategory={props.setActiveCategory} launchPageTransition={props.launchPageTransition} projects={props.projects} />
                         <Contact />
                         <Footer launchPageTransition={props.launchPageTransition} />
                     </div>
