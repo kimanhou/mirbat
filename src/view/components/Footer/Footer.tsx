@@ -26,7 +26,7 @@ const Footer : React.FC<IFooterProps> = props => {
                     Site web bâti par Kim Anh Nguyen
                 </div>
                 <div className={`footer-copyright`}>
-                    <span className={`year`}>&copy; 2021</span>
+                    <span className={`year`}>&copy; 2022</span>
                 </div>
             </div>
         </FadeIn>

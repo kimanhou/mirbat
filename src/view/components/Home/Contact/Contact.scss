@@ -11,18 +11,34 @@
         background-size: cover;
     }
     >.home-contact-content {
-        position: absolute;
-        top: 20vh;
-        left: 50%;
-        transform: translateX(-50%);
+        margin: -20vh auto 0;
         background-color: var(--color-white);
         text-align: center;
         min-height: 30vh;
         width: 63%;
         padding: var(--size-main-margin);
         overflow: hidden;
-        >.home-contact-email {
-            font-size: 2rem;
+        >.home-contact-table {
+            margin: auto;
+            >tbody {
+                >tr {
+                    >td {
+                        padding-bottom: var(--size-margin-20);
+                        &.align-right {
+                            text-align: right;
+                            line-height: 2.2rem;
+                            vertical-align: text-top;
+                        }
+                        &.align-left {
+                            text-align: left;
+                            padding-left: var(--size-margin-20);
+                        }
+                        &.home-contact-big {
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -37,8 +53,11 @@
             padding-right: var(--size-margin-20);
             padding-left: var(--size-margin-20);
             width: 70%;
-            >.home-contact-email {
-                font-size: 1.5rem;
+            >.home-contact-mobile {
+                text-align: center;
+                >.home-contact-mobile-big {
+                    font-size: 1.3rem;
+                }
             }
         }
     }
